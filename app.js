@@ -13,7 +13,6 @@ const sectionView = document.querySelector("#sectionView");
 const categoryList = document.querySelector("#categoryList");
 const questionList = document.querySelector("#questionList");
 const homeButton = document.querySelector("#homeButton");
-const scrollTopButton = document.querySelector("#scrollTopButton");
 
 const escapeHtml = (value) => value
   .replaceAll("&", "&amp;")
@@ -137,8 +136,6 @@ categoryList.addEventListener("click", (event) => {
   if (button) openSection(button.dataset.section);
 });
 homeButton.addEventListener("click", () => showHome());
-scrollTopButton.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
-window.addEventListener("scroll", () => scrollTopButton.classList.toggle("is-hidden", window.scrollY < 500));
 window.addEventListener("popstate", () => route(false));
 
 renderCategories();

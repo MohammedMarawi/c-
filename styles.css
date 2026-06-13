@@ -90,7 +90,7 @@ button { color: inherit; }
 .brand strong { font-size: 14px; line-height: 1.4; }
 .brand div > span { color: var(--muted); font-size: 11px; line-height: 1.4; }
 
-.icon-button, .scroll-top {
+.icon-button {
   display: grid;
   flex: 0 0 42px;
   width: 42px;
@@ -103,7 +103,7 @@ button { color: inherit; }
   cursor: pointer;
 }
 
-.icon-button svg, .scroll-top svg {
+.icon-button svg {
   width: 20px;
   fill: none;
   stroke: currentColor;
@@ -340,17 +340,6 @@ pre {
   line-height: 1.75;
   tab-size: 4;
   text-align: left;
-}
-
-.scroll-top {
-  position: fixed;
-  z-index: 12;
-  bottom: calc(18px + env(safe-area-inset-bottom));
-  left: 16px;
-  border-color: rgba(54, 211, 153, .45);
-  background: var(--accent);
-  color: #052b1e;
-  box-shadow: 0 12px 30px rgba(0,0,0,.35);
 }
 
 .is-hidden { display: none !important; }
