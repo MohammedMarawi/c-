@@ -605,157 +605,281 @@ const QUESTION_SECTIONS = [
       {
         "id": "trace-code-1",
         "number": 1,
-        "body": "```cpp\nint z = 8;\nint y = 6;\n\nif (z <= 10 && y > 5)\n    cout << \"values are between 5 and 10\";\nelse\n    cout << \"wrong value\";\n```"
+        "body": "```cpp\nint z = 8;\nint y = 6;\n\nif (z <= 10 && y > 5)\n    cout << \"values are between 5 and 10\";\nelse\n    cout << \"wrong value\";\n```",
+        "answer": {
+          "verdict": "الناتج",
+          "correction": "```text\nvalues are between 5 and 10\n```"
+        }
       },
       {
         "id": "trace-code-2",
         "number": 2,
-        "body": "```cpp\nfor (int i = 1; i <= 10; i++)\n{\n    if (i % 2 == 0)\n        cout << i << \"\\n\";\n}\n```"
+        "body": "```cpp\nfor (int i = 1; i <= 10; i++)\n{\n    if (i % 2 == 0)\n        cout << i << \"\\n\";\n}\n```",
+        "answer": {
+          "verdict": "الناتج",
+          "correction": "```text\n2\n4\n6\n8\n10\n```"
+        }
       },
       {
         "id": "trace-code-3",
         "number": 3,
-        "body": "```cpp\nint s = 5;\n\ns = s + 2 * 3 - 11;\n\ncout << \"value is: \" << s;\n```"
+        "body": "```cpp\nint s = 5;\n\ns = s + 2 * 3 - 11;\n\ncout << \"value is: \" << s;\n```",
+        "answer": {
+          "verdict": "الناتج",
+          "correction": "```text\nvalue is: 0\n```"
+        }
       },
       {
         "id": "trace-code-4",
         "number": 4,
-        "body": "```cpp\nint x = 9;\n\ncout << x++ << \"\\n\";\n\ncout << x;\n```"
+        "body": "```cpp\nint x = 9;\n\ncout << x++ << \"\\n\";\n\ncout << x;\n```",
+        "answer": {
+          "verdict": "الناتج",
+          "correction": "```text\n9\n10\n```"
+        }
       },
       {
         "id": "trace-code-5",
         "number": 5,
-        "body": "```cpp\nfor (int i = 1; i <= 5; i++)\n    cout << i << endl;\n```"
+        "body": "```cpp\nfor (int i = 1; i <= 5; i++)\n    cout << i << endl;\n```",
+        "answer": {
+          "verdict": "الناتج",
+          "correction": "```text\n1\n2\n3\n4\n5\n```"
+        }
       },
       {
         "id": "trace-code-6",
         "number": 6,
-        "body": "```cpp\nfor (int i = 5; i >= 0; i--)\n{\n    if (i % 2 == 0)\n        cout << i << \"\\n\";\n}\n```"
+        "body": "```cpp\nfor (int i = 5; i >= 0; i--)\n{\n    if (i % 2 == 0)\n        cout << i << \"\\n\";\n}\n```",
+        "answer": {
+          "verdict": "الناتج",
+          "correction": "```text\n4\n2\n0\n```"
+        }
       },
       {
         "id": "trace-code-7",
         "number": 7,
-        "body": "```cpp\nint n = 3, d = 2000;\n\nswitch (n)\n{\n    case 0:\n        cout << d;\n        break;\n\n    case 1:\n        cout << d + 100;\n        break;\n\n    default:\n        cout << d + 100 + (n - 2) * 500;\n        break;\n}\n```"
+        "body": "```cpp\nint n = 3, d = 2000;\n\nswitch (n)\n{\n    case 0:\n        cout << d;\n        break;\n\n    case 1:\n        cout << d + 100;\n        break;\n\n    default:\n        cout << d + 100 + (n - 2) * 500;\n        break;\n}\n```",
+        "answer": {
+          "verdict": "الناتج",
+          "correction": "```text\n2600\n```"
+        }
       },
       {
         "id": "trace-code-8",
         "number": 8,
-        "body": "```cpp\nint x = 5, y = 3;\n\nif (x >= 2 && y > 5)\n    cout << \"val-\" << x * y;\nelse\n    cout << \"value -\" << x + y;\n```"
+        "body": "```cpp\nint x = 5, y = 3;\n\nif (x >= 2 && y > 5)\n    cout << \"val-\" << x * y;\nelse\n    cout << \"value -\" << x + y;\n```",
+        "answer": {
+          "verdict": "الناتج",
+          "correction": "```text\nvalue -8\n```"
+        }
       },
       {
         "id": "trace-code-9",
         "number": 9,
-        "body": "```cpp\nint a = 10;\n\ncout << a-- << \"\\t\";\n\ncout << a;\n```"
+        "body": "```cpp\nint a = 10;\n\ncout << a-- << \"\\t\";\n\ncout << a;\n```",
+        "answer": {
+          "verdict": "الناتج",
+          "correction": "```text\n10\t9\n```"
+        }
       },
       {
         "id": "trace-code-10",
         "number": 10,
-        "body": "```cpp\nint i = 1, x = 0;\n\nwhile (i <= 10)\n{\n    x = x + i;\n    i++;\n}\n\ncout << \"Sum = \" << x;\n```"
+        "body": "```cpp\nint i = 1, x = 0;\n\nwhile (i <= 10)\n{\n    x = x + i;\n    i++;\n}\n\ncout << \"Sum = \" << x;\n```",
+        "answer": {
+          "verdict": "الناتج",
+          "correction": "```text\nSum = 55\n```"
+        }
       },
       {
         "id": "trace-code-11",
         "number": 11,
-        "body": "```cpp\nint x = 10, y = 8, z;\n\nz = x + y;\n\ncout << \"x + y = \\t\" << z;\n```"
+        "body": "```cpp\nint x = 10, y = 8, z;\n\nz = x + y;\n\ncout << \"x + y = \\t\" << z;\n```",
+        "answer": {
+          "verdict": "الناتج",
+          "correction": "```text\nx + y = \t18\n```"
+        }
       },
       {
         "id": "trace-code-12",
         "number": 12,
-        "body": "```cpp\nint a = 13;\n\ncout << a << endl;\n\ncout << ++a << endl;\n\ncout << a << endl;\n```"
+        "body": "```cpp\nint a = 13;\n\ncout << a << endl;\n\ncout << ++a << endl;\n\ncout << a << endl;\n```",
+        "answer": {
+          "verdict": "الناتج",
+          "correction": "```text\n13\n14\n14\n```"
+        }
       },
       {
         "id": "trace-code-13",
         "number": 13,
-        "body": "```cpp\nint a = 4, b;\n\nb = a - 10 / 2;\n\ncout << b << \"\\n\";\n\nif (b >= 0)\n    cout << \"postitive\" << \"\\n\";\nelse\n    cout << \"Negative\" << \"\\n\";\n```"
+        "body": "```cpp\nint a = 4, b;\n\nb = a - 10 / 2;\n\ncout << b << \"\\n\";\n\nif (b >= 0)\n    cout << \"postitive\" << \"\\n\";\nelse\n    cout << \"Negative\" << \"\\n\";\n```",
+        "answer": {
+          "verdict": "الناتج",
+          "correction": "```text\n-1\nNegative\n```"
+        }
       },
       {
         "id": "trace-code-14",
         "number": 14,
-        "body": "```cpp\nint z = 8;\n\ncout << z << \"\\n\";\n\ncout << z-- << \"\\n\";\n\ncout << z << \"\\n\";\n```"
+        "body": "```cpp\nint z = 8;\n\ncout << z << \"\\n\";\n\ncout << z-- << \"\\n\";\n\ncout << z << \"\\n\";\n```",
+        "answer": {
+          "verdict": "الناتج",
+          "correction": "```text\n8\n8\n7\n```"
+        }
       },
       {
         "id": "trace-code-15",
         "number": 15,
-        "body": "```cpp\nint x = 4, y = 11;\n\nif (x % 2 == 0 && y > 10)\n    cout << \"value is\" << x + y;\nelse\n    cout << \"The Val =\" << x * y;\n```"
+        "body": "```cpp\nint x = 4, y = 11;\n\nif (x % 2 == 0 && y > 10)\n    cout << \"value is\" << x + y;\nelse\n    cout << \"The Val =\" << x * y;\n```",
+        "answer": {
+          "verdict": "الناتج",
+          "correction": "```text\nvalue is15\n```"
+        }
       },
       {
         "id": "trace-code-16",
         "number": 16,
-        "body": "```cpp\nfor (int i = 10; i < 15; i++)\n{\n    if (i == 13)\n        break;\n\n    cout << i << endl;\n}\n```"
+        "body": "```cpp\nfor (int i = 10; i < 15; i++)\n{\n    if (i == 13)\n        break;\n\n    cout << i << endl;\n}\n```",
+        "answer": {
+          "verdict": "الناتج",
+          "correction": "```text\n10\n11\n12\n```"
+        }
       },
       {
         "id": "trace-code-17",
         "number": 17,
-        "body": "```cpp\nfor (int i = 6; i > 1; i--)\n{\n    if (i % 2 != 0)\n        continue;\n\n    cout << i << \"\\t\" << i * i << endl;\n}\n```"
+        "body": "```cpp\nfor (int i = 6; i > 1; i--)\n{\n    if (i % 2 != 0)\n        continue;\n\n    cout << i << \"\\t\" << i * i << endl;\n}\n```",
+        "answer": {
+          "verdict": "الناتج",
+          "correction": "```text\n6\t36\n4\t16\n2\t4\n```"
+        }
       },
       {
         "id": "trace-code-18",
         "number": 18,
-        "body": "```cpp\nint num = 10;\n\ncout << num++ << \"\\n\";\n\ncout << num;\n```"
+        "body": "```cpp\nint num = 10;\n\ncout << num++ << \"\\n\";\n\ncout << num;\n```",
+        "answer": {
+          "verdict": "الناتج",
+          "correction": "```text\n10\n11\n```"
+        }
       },
       {
         "id": "trace-code-19",
         "number": 19,
-        "body": "```cpp\nint z = 5, y = 10;\n\nif (z <= 8 && y < 5)\n    cout << \"values are between 0 and 10\";\nelse\n    cout << \"wrong value\";\n```"
+        "body": "```cpp\nint z = 5, y = 10;\n\nif (z <= 8 && y < 5)\n    cout << \"values are between 0 and 10\";\nelse\n    cout << \"wrong value\";\n```",
+        "answer": {
+          "verdict": "الناتج",
+          "correction": "```text\nwrong value\n```"
+        }
       },
       {
         "id": "trace-code-20",
         "number": 20,
-        "body": "```cpp\nint s = 3;\n\ns = s + 2 * 3 - 9;\n\ncout << \"value is: \" << s;\n```"
+        "body": "```cpp\nint s = 3;\n\ns = s + 2 * 3 - 9;\n\ncout << \"value is: \" << s;\n```",
+        "answer": {
+          "verdict": "الناتج",
+          "correction": "```text\nvalue is: 0\n```"
+        }
       },
       {
         "id": "trace-code-21",
         "number": 21,
-        "body": "```cpp\nint y = 8;\n\ncout << --y << \"\\n\";\n\ncout << y;\n```"
+        "body": "```cpp\nint y = 8;\n\ncout << --y << \"\\n\";\n\ncout << y;\n```",
+        "answer": {
+          "verdict": "الناتج",
+          "correction": "```text\n7\n7\n```"
+        }
       },
       {
         "id": "trace-code-22",
         "number": 22,
-        "body": "```cpp\nint x = 11;\n\ncout << x++ << \"\\n\";\n\ncout << x;\n```"
+        "body": "```cpp\nint x = 11;\n\ncout << x++ << \"\\n\";\n\ncout << x;\n```",
+        "answer": {
+          "verdict": "الناتج",
+          "correction": "```text\n11\n12\n```"
+        }
       },
       {
         "id": "trace-code-23",
         "number": 23,
-        "body": "```cpp\nint s = 16, m = 2;\n\nif (s >= 4 && m > 10)\n    cout << \"result =\" << pow(m, 5);\nelse\n    cout << \"result =\" << pow(m, 3);\n```"
+        "body": "```cpp\nint s = 16, m = 2;\n\nif (s >= 4 && m > 10)\n    cout << \"result =\" << pow(m, 5);\nelse\n    cout << \"result =\" << pow(m, 3);\n```",
+        "answer": {
+          "verdict": "الناتج",
+          "correction": "```text\nresult =8\n```"
+        }
       },
       {
         "id": "trace-code-24",
         "number": 24,
-        "body": "```cpp\nfor (int i = 1; i <= 20; i++)\n{\n    if (i % 2 != 0)\n        continue;\n\n    cout << i << \"\\n\";\n}\n```"
+        "body": "```cpp\nfor (int i = 1; i <= 20; i++)\n{\n    if (i % 2 != 0)\n        continue;\n\n    cout << i << \"\\n\";\n}\n```",
+        "answer": {
+          "verdict": "الناتج",
+          "correction": "```text\n2\n4\n6\n8\n10\n12\n14\n16\n18\n20\n```"
+        }
       },
       {
         "id": "trace-code-25",
         "number": 25,
-        "body": "```cpp\nint i = 1;\n\nwhile (i <= 5)\n{\n    cout << i << \"\\t\";\n\n    i++;\n}\n```"
+        "body": "```cpp\nint i = 1;\n\nwhile (i <= 5)\n{\n    cout << i << \"\\t\";\n\n    i++;\n}\n```",
+        "answer": {
+          "verdict": "الناتج",
+          "correction": "```text\n1\t2\t3\t4\t5\t\n```"
+        }
       },
       {
         "id": "trace-code-26",
         "number": 26,
-        "body": "```cpp\nint z = 20;\n\ncout << z-- << \"\\n\";\n\ncout << z << \"\\n\";\n```"
+        "body": "```cpp\nint z = 20;\n\ncout << z-- << \"\\n\";\n\ncout << z << \"\\n\";\n```",
+        "answer": {
+          "verdict": "الناتج",
+          "correction": "```text\n20\n19\n```"
+        }
       },
       {
         "id": "trace-code-27",
         "number": 27,
-        "body": "```cpp\nint n = 4, d;\n\nd = 6 + n / 2;\n\nswitch (d)\n{\n    case 5:\n        cout << d * 10;\n        break;\n\n    case 8:\n        cout << d * 100;\n        break;\n\n    default:\n        cout << \"Error\";\n        break;\n}\n```"
+        "body": "```cpp\nint n = 4, d;\n\nd = 6 + n / 2;\n\nswitch (d)\n{\n    case 5:\n        cout << d * 10;\n        break;\n\n    case 8:\n        cout << d * 100;\n        break;\n\n    default:\n        cout << \"Error\";\n        break;\n}\n```",
+        "answer": {
+          "verdict": "الناتج",
+          "correction": "```text\n800\n```"
+        }
       },
       {
         "id": "trace-code-28",
         "number": 28,
-        "body": "```cpp\nfor (int i = 5; i <= 10; i++)\n{\n    if (i == 7)\n        break;\n\n    cout << i << endl;\n}\n```"
+        "body": "```cpp\nfor (int i = 5; i <= 10; i++)\n{\n    if (i == 7)\n        break;\n\n    cout << i << endl;\n}\n```",
+        "answer": {
+          "verdict": "الناتج",
+          "correction": "```text\n5\n6\n```"
+        }
       },
       {
         "id": "trace-code-29",
         "number": 29,
-        "body": "```cpp\nint x = 4, y = 11;\n\nif (x % 2 == 0 && y > 10)\n    cout << \"value is\" << x + y;\nelse\n    cout << \"The Val = \" << x * y;\n```"
+        "body": "```cpp\nint x = 4, y = 11;\n\nif (x % 2 == 0 && y > 10)\n    cout << \"value is\" << x + y;\nelse\n    cout << \"The Val = \" << x * y;\n```",
+        "answer": {
+          "verdict": "الناتج",
+          "correction": "```text\nvalue is15\n```"
+        }
       },
       {
         "id": "trace-code-30",
         "number": 30,
-        "body": "```cpp\nint a = 10, b;\n\nb = a + 8 / 2;\n\ncout << b << \"\\n\";\n\nif (b <= 9)\n    cout << \"values are between 0 and 15\";\nelse\n    cout << \"values more than 15\";\n```"
+        "body": "```cpp\nint a = 10, b;\n\nb = a + 8 / 2;\n\ncout << b << \"\\n\";\n\nif (b <= 9)\n    cout << \"values are between 0 and 15\";\nelse\n    cout << \"values more than 15\";\n```",
+        "answer": {
+          "verdict": "الناتج",
+          "correction": "```text\n14\nvalues more than 15\n```"
+        }
       },
       {
         "id": "trace-code-31",
         "number": 31,
-        "body": "```cpp\nint z = 10;\n\ncout << --z << \"\\n\";\n\ncout << z;\n\nint y = 20;\n\ncout << y << \"\\n\";\n\ncout << y;\n```"
+        "body": "```cpp\nint z = 10;\n\ncout << --z << \"\\n\";\n\ncout << z;\n\nint y = 20;\n\ncout << y << \"\\n\";\n\ncout << y;\n```",
+        "answer": {
+          "verdict": "الناتج",
+          "correction": "```text\n9\n920\n20\n```"
+        }
       }
     ]
   }
