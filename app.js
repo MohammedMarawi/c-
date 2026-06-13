@@ -94,7 +94,7 @@ function renderQuestionList(section) {
         <details class="answer-box">
           <summary>عرض الإجابة</summary>
           <div class="answer-content">
-            <strong class="${item.answer.verdict === "صح" ? "is-true" : "is-false"}">${item.answer.verdict}</strong>
+            <strong class="${item.answer.verdict === "صح" ? "is-true" : item.answer.verdict === "خطأ" ? "is-false" : "is-choice"}">${item.answer.verdict}</strong>
             ${item.answer.correction ? `<div>${renderMarkdown(item.answer.correction)}</div>` : ""}
           </div>
         </details>` : ""}

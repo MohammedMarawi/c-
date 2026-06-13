@@ -312,6 +312,7 @@ h1 {
 
 .answer-content .is-true { color: #4ade80; }
 .answer-content .is-false { color: #fb7185; }
+.answer-content .is-choice { color: var(--accent); }
 .answer-content p { margin: 0; }
 
 .list-item, .choice-item {

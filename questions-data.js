@@ -356,47 +356,83 @@ const QUESTION_SECTIONS = [
       {
         "id": "multiple-choice-1",
         "number": 1,
-        "body": "التصريح عن متحول من نوع عدد عشري يكون بالشكل:\n\n   أ.\n\n   ```cpp\n   int x = 5.7;\n   ```\n\n   ب.\n\n   ```cpp\n   int x = 5;\n   ```\n\n   ج.\n\n   ```cpp\n   float x = 5.7;\n   ```"
+        "body": "التصريح عن متحول من نوع عدد عشري يكون بالشكل:\n\n   أ.\n\n   ```cpp\n   int x = 5.7;\n   ```\n\n   ب.\n\n   ```cpp\n   int x = 5;\n   ```\n\n   ج.\n\n   ```cpp\n   float x = 5.7;\n   ```",
+        "answer": {
+          "verdict": "ج",
+          "correction": "float x = 5.7;"
+        }
       },
       {
         "id": "multiple-choice-2",
         "number": 2,
-        "body": "ناتج تنفيذ العملية الحسابية التالية:\n\n   ```cpp\n   3 + 1 * (6 - 6) / 2\n   ```\n\n   أ. `6`\n   ب. `9`\n   ج. `21`"
+        "body": "ناتج تنفيذ العملية الحسابية التالية:\n\n   ```cpp\n   3 + 1 * (6 - 6) / 2\n   ```\n\n   أ. `6`\n   ب. `9`\n   ج. `21`",
+        "answer": {
+          "verdict": "لا توجد إجابة صحيحة ضمن الخيارات",
+          "correction": "الناتج هو `3`."
+        }
       },
       {
         "id": "multiple-choice-3",
         "number": 3,
-        "body": "التعليمة التي تؤدي إلى تنفيذ مجموعة من التعليمات عددًا محددًا من المرات هي:\n\n   أ. `for`\n   ب. `while`\n   ج. `cin`"
+        "body": "التعليمة التي تؤدي إلى تنفيذ مجموعة من التعليمات عددًا محددًا من المرات هي:\n\n   أ. `for`\n   ب. `while`\n   ج. `cin`",
+        "answer": {
+          "verdict": "أ",
+          "correction": "for"
+        }
       },
       {
         "id": "multiple-choice-4",
         "number": 4,
-        "body": "تعليمة الطباعة على الشاشة هي:\n\n   أ. `print`\n   ب. `cin`\n   ج. `cout`"
+        "body": "تعليمة الطباعة على الشاشة هي:\n\n   أ. `print`\n   ب. `cin`\n   ج. `cout`",
+        "answer": {
+          "verdict": "ج",
+          "correction": "cout"
+        }
       },
       {
         "id": "multiple-choice-5",
         "number": 5,
-        "body": "بفرض:\n\n   ```cpp\n   x = 11\n   y = 3\n   z = x % y\n   ```\n\n   فإن قيمة `z` هي:\n\n   أ. `1`\n   ب. `2.5`\n   ج. `2`"
+        "body": "بفرض:\n\n   ```cpp\n   x = 11\n   y = 3\n   z = x % y\n   ```\n\n   فإن قيمة `z` هي:\n\n   أ. `1`\n   ب. `2.5`\n   ج. `2`",
+        "answer": {
+          "verdict": "ج",
+          "correction": "2"
+        }
       },
       {
         "id": "multiple-choice-6",
         "number": 6,
-        "body": "التصريح عن متحول من نوع عدد عشري يكون بالشكل:\n\n   أ.\n\n   ```cpp\n   int y = 5.7;\n   ```\n\n   ب.\n\n   ```cpp\n   int y = 5;\n   ```\n\n   ج.\n\n   ```cpp\n   float y = 5.7;\n   ```"
+        "body": "التصريح عن متحول من نوع عدد عشري يكون بالشكل:\n\n   أ.\n\n   ```cpp\n   int y = 5.7;\n   ```\n\n   ب.\n\n   ```cpp\n   int y = 5;\n   ```\n\n   ج.\n\n   ```cpp\n   float y = 5.7;\n   ```",
+        "answer": {
+          "verdict": "ج",
+          "correction": "float y = 5.7;"
+        }
       },
       {
         "id": "multiple-choice-7",
         "number": 7,
-        "body": "ناتج تنفيذ العملية الحسابية التالية:\n\n   ```cpp\n   5 + 2 * 6 - 6 % 2\n   ```\n\n   أ. `39`\n   ب. `4`\n   ج. `17`"
+        "body": "ناتج تنفيذ العملية الحسابية التالية:\n\n   ```cpp\n   5 + 2 * 6 - 6 % 2\n   ```\n\n   أ. `39`\n   ب. `4`\n   ج. `17`",
+        "answer": {
+          "verdict": "ج",
+          "correction": "17"
+        }
       },
       {
         "id": "multiple-choice-8",
         "number": 8,
-        "body": "التعليمة التي تؤدي إلى تنفيذ مجموعة من التعليمات عند تحقق شرط معين:\n\n   أ. `main`\n   ب. `cin`\n   ج. `if`"
+        "body": "التعليمة التي تؤدي إلى تنفيذ مجموعة من التعليمات عند تحقق شرط معين:\n\n   أ. `main`\n   ب. `cin`\n   ج. `if`",
+        "answer": {
+          "verdict": "ج",
+          "correction": "if"
+        }
       },
       {
         "id": "multiple-choice-9",
         "number": 9,
-        "body": "اسم المتحول في `C++` يجب:\n\n   أ. أن يبدأ برقم.\n   ب. ألا يتضمن فراغات.\n   ج. أن يكون من الأسماء المحجوزة في اللغة."
+        "body": "اسم المتحول في `C++` يجب:\n\n   أ. أن يبدأ برقم.\n   ب. ألا يتضمن فراغات.\n   ج. أن يكون من الأسماء المحجوزة في اللغة.",
+        "answer": {
+          "verdict": "ب",
+          "correction": "ألا يتضمن فراغات."
+        }
       }
     ]
   },
