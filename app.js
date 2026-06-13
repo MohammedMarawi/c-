@@ -23,6 +23,46 @@ function inlineFormat(text) {
   return escapeHtml(text).replace(/`([^`]+)`/g, "<code>$1</code>");
 }
 
+function highlightCpp(code) {
+  const keywords = new Set([
+    "alignas", "alignof", "and", "asm", "auto", "break", "case", "catch",
+    "class", "const", "constexpr", "continue", "default", "delete", "do",
+    "else", "enum", "explicit", "export", "extern", "false", "for", "friend",
+    "goto", "if", "inline", "namespace", "new", "noexcept", "not", "nullptr",
+    "operator", "or", "private", "protected", "public", "register", "return",
+    "sizeof", "static", "struct", "switch", "template", "this", "throw", "true",
+    "try", "typedef", "typename", "union", "using", "virtual", "volatile", "while",
+  ]);
+  const types = new Set([
+    "bool", "char", "double", "float", "int", "long", "short", "signed",
+    "string", "unsigned", "void", "wchar_t",
+  ]);
+  const builtins = new Set(["cin", "cout", "endl", "main", "pow", "sqrt", "std"]);
+  const tokenPattern = /(\/\/[^\n]*|\/\*[\s\S]*?\*\/|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|^\s*#\s*[a-zA-Z]+(?:\s*<[^>\n]+>)?|(?:\b\d+(?:\.\d+)?\b)|(?:\b[A-Za-z_]\w*\b)|(?:&&|\|\||==|!=|<=|>=|\+\+|--|<<|>>|[+\-*\/%=<>!&|^~?:])|(?:[{}()[\];,.]))/gm;
+
+  let output = "";
+  let cursor = 0;
+  for (const match of code.matchAll(tokenPattern)) {
+    output += escapeHtml(code.slice(cursor, match.index));
+    const token = match[0];
+    let className = "tok-punctuation";
+
+    if (/^\s*#/.test(token)) className = "tok-preprocessor";
+    else if (/^\/[/*]/.test(token)) className = "tok-comment";
+    else if (/^["']/.test(token)) className = "tok-string";
+    else if (/^\d/.test(token)) className = "tok-number";
+    else if (keywords.has(token)) className = "tok-keyword";
+    else if (types.has(token)) className = "tok-type";
+    else if (builtins.has(token)) className = "tok-builtin";
+    else if (/^[A-Za-z_]/.test(token)) className = "tok-variable";
+    else if (/^[+\-*\/%=<>!&|^~?:]/.test(token)) className = "tok-operator";
+
+    output += `<span class="${className}">${escapeHtml(token)}</span>`;
+    cursor = match.index + token.length;
+  }
+  return output + escapeHtml(code.slice(cursor));
+}
+
 function renderMarkdown(markdown) {
   const lines = markdown.trim().split(/\r?\n/);
   const html = [];
@@ -38,7 +78,9 @@ function renderMarkdown(markdown) {
         code.push(lines[index]);
         index += 1;
       }
-      html.push(`<div class="code-block"><div class="code-label"><span>${escapeHtml(language)}</span><span class="code-dots">● ● ●</span></div><pre><code>${escapeHtml(code.join("\n"))}</code></pre></div>`);
+      const source = code.join("\n");
+      const renderedCode = /^(cpp|c\+\+)$/i.test(language) ? highlightCpp(source) : escapeHtml(source);
+      html.push(`<div class="code-block"><div class="code-label"><span>${escapeHtml(language)}</span><span class="code-dots">● ● ●</span></div><pre><code class="language-${escapeHtml(language)}">${renderedCode}</code></pre></div>`);
       index += 1;
       continue;
     }

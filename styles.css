@@ -384,6 +384,17 @@ pre {
   text-align: left;
 }
 
+.tok-keyword { color: #c792ea; font-weight: 700; }
+.tok-type { color: #82e6c5; }
+.tok-builtin { color: #72c7ff; }
+.tok-variable { color: #d9e2ef; }
+.tok-number { color: #f6c177; }
+.tok-string { color: #a8d279; }
+.tok-comment { color: #6f7f91; font-style: italic; }
+.tok-preprocessor { color: #ff8f9c; }
+.tok-operator { color: #89ddff; }
+.tok-punctuation { color: #aeb9c8; }
+
 .is-hidden { display: none !important; }
 
 @media (min-width: 640px) {
