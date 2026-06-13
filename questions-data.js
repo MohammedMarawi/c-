@@ -518,7 +518,7 @@ const QUESTION_SECTIONS = [
         "body": "اكتب برنامجًا يطلب من المستخدم إدخال علامات طالب في 5 مواد، ثم يقوم بحساب معدل هذا الطالب، فإذا كان المعدل أعلى من 70 يطبع على الشاشة العبارة `Very Good`، وإلا يطبع العبارة `Accepted`.",
         "answer": {
           "verdict": "الحل",
-          "correction": "```cpp\n#include <iostream>\nusing namespace std;\n\nint main()\n{\n    float mark1, mark2, mark3, mark4, mark5, sum, average;\n\n    cin >> mark1 >> mark2 >> mark3 >> mark4 >> mark5;\n\n    sum = mark1 + mark2 + mark3 + mark4 + mark5;\n    average = sum / 5;\n\n    if (average > 70)\n        cout << \"Very Good\";\n    else\n        cout << \"Accepted\";\n\n    return 0;\n}\n```"
+          "correction": "```cpp\n#include <iostream>\nusing namespace std;\n\nint main()\n{\n    float mark, sum = 0, average;\n    int i;\n\n    for (i = 0; i < 5; i++)\n    {\n        cin >> mark;\n        sum += mark;\n    }\n\n    average = sum / 5;\n\n    if (average > 70)\n        cout << \"Very Good\";\n    else\n        cout << \"Accepted\";\n\n    return 0;\n}\n```"
         }
       },
       {
