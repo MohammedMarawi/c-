@@ -7,10 +7,9 @@ const SECTION_THEMES = [
   { accent: "#f472b6", rgb: "244, 114, 182" },
 ];
 
-const state = { section: null, question: null };
+const state = { section: null };
 const homeView = document.querySelector("#homeView");
 const sectionView = document.querySelector("#sectionView");
-const questionView = document.querySelector("#questionView");
 const categoryList = document.querySelector("#categoryList");
 const questionList = document.querySelector("#questionList");
 const backButton = document.querySelector("#backButton");
@@ -70,14 +69,6 @@ function applyTheme(section) {
   document.body.classList.toggle("inside-section", Boolean(section));
 }
 
-function previewText(body) {
-  return body
-    .replace(/```[\s\S]*?```/g, "مقطع برمجي")
-    .replace(/`/g, "")
-    .replace(/\s+/g, " ")
-    .trim();
-}
-
 function renderCategories() {
   categoryList.innerHTML = QUESTION_SECTIONS.map((section, index) => {
     const theme = sectionTheme(section);
@@ -95,30 +86,28 @@ function renderCategories() {
 
 function renderQuestionList(section) {
   questionList.innerHTML = section.items.map((item) => `
-    <button class="question-link" type="button" data-question="${item.number}">
-      <span class="question-index">${String(item.number).padStart(2, "0")}</span>
-      <span class="question-preview">
+    <article class="question-card">
+      <header class="question-header">
+        <span class="question-index">${String(item.number).padStart(2, "0")}</span>
         <strong>السؤال ${item.number}</strong>
-        <small>${escapeHtml(previewText(item.body))}</small>
-      </span>
-      <span class="question-arrow">‹</span>
-    </button>
+      </header>
+      <div class="question-body">${renderMarkdown(item.body)}</div>
+    </article>
   `).join("");
 }
 
 function showOnly(view) {
-  [homeView, sectionView, questionView].forEach((item) => item.classList.toggle("is-hidden", item !== view));
+  [homeView, sectionView].forEach((item) => item.classList.toggle("is-hidden", item !== view));
 }
 
 function openSection(id, push = true) {
   const section = QUESTION_SECTIONS.find((item) => item.id === id);
   if (!section) return showHome(push);
   state.section = section;
-  state.question = null;
   applyTheme(section);
   document.querySelector("#sectionKicker").textContent = `القسم ${QUESTION_SECTIONS.indexOf(section) + 1} من ${QUESTION_SECTIONS.length}`;
   document.querySelector("#sectionTitle").textContent = section.title;
-  document.querySelector("#sectionMeta").textContent = `${section.instruction} اختر سؤالًا لفتحه في صفحة مستقلة.`;
+  document.querySelector("#sectionMeta").textContent = `${section.instruction} ${section.items.length} بندًا.`;
   document.querySelector("#headerSubtitle").textContent = section.title;
   renderQuestionList(section);
   showOnly(sectionView);
@@ -128,42 +117,8 @@ function openSection(id, push = true) {
   window.scrollTo({ top: 0 });
 }
 
-function openQuestion(sectionId, number, push = true) {
-  const section = QUESTION_SECTIONS.find((item) => item.id === sectionId);
-  const item = section?.items.find((entry) => entry.number === Number(number));
-  if (!section || !item) return openSection(sectionId, push);
-  state.section = section;
-  state.question = item;
-  applyTheme(section);
-  document.querySelector("#detailKicker").textContent = section.title;
-  document.querySelector("#detailTitle").textContent = `السؤال ${item.number}`;
-  document.querySelector("#detailMeta").textContent = `${item.number} من ${section.items.length}`;
-  document.querySelector("#detailBody").innerHTML = renderMarkdown(item.body);
-  document.querySelector("#headerSubtitle").textContent = `السؤال ${item.number} · ${section.title}`;
-  configureNavigation(section, item);
-  showOnly(questionView);
-  backButton.classList.remove("is-hidden");
-  homeButton.classList.remove("is-hidden");
-  if (push) history.pushState({}, "", `#${section.id}/question/${item.number}`);
-  window.scrollTo({ top: 0 });
-}
-
-function configureNavigation(section, item) {
-  const previous = section.items[item.number - 2];
-  const next = section.items[item.number];
-  const previousButton = document.querySelector("#previousQuestion");
-  const nextButton = document.querySelector("#nextQuestion");
-  previousButton.disabled = !previous;
-  nextButton.disabled = !next;
-  document.querySelector("#previousLabel").textContent = previous ? `السؤال ${previous.number}` : "لا يوجد";
-  document.querySelector("#nextLabel").textContent = next ? `السؤال ${next.number}` : "لا يوجد";
-  previousButton.onclick = () => previous && openQuestion(section.id, previous.number);
-  nextButton.onclick = () => next && openQuestion(section.id, next.number);
-}
-
 function showHome(push = true) {
   state.section = null;
-  state.question = null;
   applyTheme(null);
   renderCategories();
   showOnly(homeView);
@@ -177,17 +132,12 @@ function showHome(push = true) {
 function route(push = false) {
   const parts = location.hash.slice(1).split("/").filter(Boolean);
   if (!parts.length) return showHome(push);
-  if (parts[1] === "question" && parts[2]) return openQuestion(parts[0], parts[2], push);
   openSection(parts[0], push);
 }
 
 categoryList.addEventListener("click", (event) => {
   const button = event.target.closest("[data-section]");
   if (button) openSection(button.dataset.section);
-});
-questionList.addEventListener("click", (event) => {
-  const button = event.target.closest("[data-question]");
-  if (button) openQuestion(state.section.id, button.dataset.question);
 });
 backButton.addEventListener("click", () => history.back());
 homeButton.addEventListener("click", () => showHome());
