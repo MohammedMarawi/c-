@@ -394,6 +394,8 @@ pre {
 .tok-preprocessor { color: #ff8f9c; }
 .tok-operator { color: #89ddff; }
 .tok-punctuation { color: #aeb9c8; }
+.tok-fix,
+.tok-fix span { color: #4ade80 !important; font-weight: 700; }
 
 .is-hidden { display: none !important; }
 

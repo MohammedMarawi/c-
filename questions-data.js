@@ -447,7 +447,7 @@ const QUESTION_SECTIONS = [
         "body": "صحح الأخطاء الموجودة في البرنامج التالي، والذي يأخذ كدخل عددين صحيحين ثم يقوم بحساب مجموعهما وباقي قسمة الأول على الثاني.\r\n\r\n```cpp\r\n#include <iostream.h>\r\n\r\nmain()\r\n{\r\n    char x, y;\r\n\r\n    cin >> x >> y;\r\n\r\n    cin << \"Sum=\" << x+y << \"\\n\"\r\n\r\n    cout << \"Mod=\" << x/y << \"\\n\";\r\n\r\n    return 0;\r\n}\r\n```",
         "answer": {
           "verdict": "التصحيح",
-          "correction": "الخطأ 1: `char x, y;` ← الصحيح: `int x, y;`\n\nالخطأ 2: `cin << \"Sum=\" << x+y << \"\\n\"` ← نستخدم `cout` ونضيف الفاصلة المنقوطة.\n\nالخطأ 3: `x / y` ← الصحيح لحساب باقي القسمة: `x % y`.\n\nالبرنامج المصحح:\n\n```cpp\n#include <iostream>\nusing namespace std;\n\nint main()\n{\n    int x, y;\n\n    cin >> x >> y;\n\n    cout << \"Sum = \" << x + y << endl;\n    cout << \"Mod = \" << x % y << endl;\n\n    return 0;\n}\n```"
+          "correction": "الخطأ 1: `char x, y;` ← الصحيح: `int x, y;`\n\nالخطأ 2: `cin << \"Sum=\" << x+y << \"\\n\"` ← نستخدم `cout` ونضيف الفاصلة المنقوطة.\n\nالخطأ 3: `x / y` ← الصحيح لحساب باقي القسمة: `x % y`.\n\nالبرنامج المصحح:\n\n```cpp\n#include <iostream.h>\n\nmain()\n{\n[[fix]]    int x, y;[[/fix]]\n\n    cin >> x >> y;\n\n[[fix]]    cout << \"Sum = \" << x + y << endl;[[/fix]]\n[[fix]]    cout << \"Mod = \" << x % y << endl;[[/fix]]\n\n    return 0;\n}\n```"
         }
       },
       {
@@ -456,7 +456,7 @@ const QUESTION_SECTIONS = [
         "body": "صحح الأخطاء الموجودة في البرنامج التالي، والذي يقوم بحساب مجموع الأعداد الزوجية الموجودة في المجال من 15 إلى 25.\r\n\r\n```cpp\r\n#include <iostream.h>\r\n\r\nmain()\r\n{\r\n    bool sum = 0;\r\n\r\n    for (int i = 1; i <= 15; i--)\r\n    {\r\n        if (i / 2 = 0);\r\n            sum = sum + 1;\r\n    }\r\n\r\n    cin << \"sum is : \" << i;\r\n\r\n    return 0;\r\n}\r\n```",
         "answer": {
           "verdict": "التصحيح",
-          "correction": "الخطأ 1: `bool sum = 0;` ← الصحيح: `int sum = 0, i;`\n\nالخطأ 2: `for (int i = 1; i <= 15; i--)` ← المجال الصحيح من `15` إلى `25` والزيادة تكون `i++`.\n\nالخطأ 3: `if (i / 2 = 0);` ← الصحيح: `if (i % 2 == 0)` دون فاصلة منقوطة.\n\nالخطأ 4: `sum = sum + 1;` ← الصحيح لجمع الأعداد: `sum = sum + i;`\n\nالخطأ 5: `cin << \"sum is : \" << i;` ← الصحيح: `cout << \"sum is : \" << sum;`.\n\nالبرنامج المصحح:\n\n```cpp\n#include <iostream>\nusing namespace std;\n\nint main()\n{\n    int sum = 0, i;\n\n    for (i = 15; i <= 25; i++)\n    {\n        if (i % 2 == 0)\n            sum = sum + i;\n    }\n\n    cout << \"sum is : \" << sum;\n\n    return 0;\n}\n```"
+          "correction": "الخطأ 1: `bool sum = 0;` ← الصحيح: `int sum = 0, i;`\n\nالخطأ 2: `for (int i = 1; i <= 15; i--)` ← المجال الصحيح من `15` إلى `25` والزيادة تكون `i++`.\n\nالخطأ 3: `if (i / 2 = 0);` ← الصحيح: `if (i % 2 == 0)` دون فاصلة منقوطة.\n\nالخطأ 4: `sum = sum + 1;` ← الصحيح لجمع الأعداد: `sum = sum + i;`\n\nالخطأ 5: `cin << \"sum is : \" << i;` ← الصحيح: `cout << \"sum is : \" << sum;`.\n\nالبرنامج المصحح:\n\n```cpp\n#include <iostream.h>\n\nmain()\n{\n[[fix]]    int sum = 0, i;[[/fix]]\n\n[[fix]]    for (i = 15; i <= 25; i++)[[/fix]]\n    {\n[[fix]]        if (i % 2 == 0)[[/fix]]\n[[fix]]            sum = sum + i;[[/fix]]\n    }\n\n[[fix]]    cout << \"sum is : \" << sum;[[/fix]]\n\n    return 0;\n}\n```"
         }
       },
       {
@@ -465,7 +465,7 @@ const QUESTION_SECTIONS = [
         "body": "صحح الأخطاء الموجودة في البرنامج التالي، والذي يقوم بحساب مجموع الأعداد الزوجية ضمن المجال من `1` إلى `30`.\r\n\r\n```cpp\r\n#include <math.h>\r\n\r\nmain()\r\n{\r\n    int sum = 1;\r\n\r\n    for (int i = 1; i <= 10; i++)\r\n    {\r\n        if (i / 2 == 0)\r\n            sum = sum + 1;\r\n    }\r\n\r\n    cout << \"sum is : \" << i;\r\n\r\n    return 0;\r\n}\r\n```",
         "answer": {
           "verdict": "التصحيح",
-          "correction": "الخطأ 1: `#include <math.h>` ← البرنامج يحتاج مكتبة الإدخال والإخراج: `#include <iostream>`.\n\nالخطأ 2: `int sum = 1;` ← الصحيح: `int sum = 0, i;`\n\nالخطأ 3: `i <= 10` ← الصحيح للمجال المطلوب: `i <= 30`.\n\nالخطأ 4: `if (i / 2 == 0)` ← الصحيح: `if (i % 2 == 0)`.\n\nالخطأ 5: `sum = sum + 1;` ← الصحيح: `sum = sum + i;`\n\nالخطأ 6: طباعة `i` ← الصحيح طباعة `sum`.\n\nالبرنامج المصحح:\n\n```cpp\n#include <iostream>\nusing namespace std;\n\nint main()\n{\n    int sum = 0, i;\n\n    for (i = 1; i <= 30; i++)\n    {\n        if (i % 2 == 0)\n            sum = sum + i;\n    }\n\n    cout << \"sum is : \" << sum;\n\n    return 0;\n}\n```"
+          "correction": "الخطأ 1: `#include <math.h>` ← البرنامج يحتاج مكتبة الإدخال والإخراج: `#include <iostream>`.\n\nالخطأ 2: `int sum = 1;` ← الصحيح: `int sum = 0, i;`\n\nالخطأ 3: `i <= 10` ← الصحيح للمجال المطلوب: `i <= 30`.\n\nالخطأ 4: `if (i / 2 == 0)` ← الصحيح: `if (i % 2 == 0)`.\n\nالخطأ 5: `sum = sum + 1;` ← الصحيح: `sum = sum + i;`\n\nالخطأ 6: طباعة `i` ← الصحيح طباعة `sum`.\n\nالبرنامج المصحح:\n\n```cpp\n[[fix]]#include <iostream.h>[[/fix]]\n\nmain()\n{\n[[fix]]    int sum = 0, i;[[/fix]]\n\n[[fix]]    for (i = 1; i <= 30; i++)[[/fix]]\n    {\n[[fix]]        if (i % 2 == 0)[[/fix]]\n[[fix]]            sum = sum + i;[[/fix]]\n    }\n\n[[fix]]    cout << \"sum is : \" << sum;[[/fix]]\n\n    return 0;\n}\n```"
         }
       },
       {
@@ -474,7 +474,7 @@ const QUESTION_SECTIONS = [
         "body": "صحح الأخطاء الموجودة في البرنامج التالي، والذي يأخذ كدخل عددين صحيحين ثم يطبع مجموعهما وباقي قسمة الأول على الثاني.\r\n\r\n```cpp\r\n#include <iostream.h>\r\n\r\nmain()\r\n{\r\n    char x, y;\r\n\r\n    cin >> x >> y;\r\n\r\n    cin << x + y << \"\\n\"\r\n\r\n    cout << x / y << \"\\n\";\r\n\r\n    return 0;\r\n}\r\n```",
         "answer": {
           "verdict": "التصحيح",
-          "correction": "الخطأ 1: `char x, y;` ← الصحيح: `int x, y;`\n\nالخطأ 2: `cin << x + y << \"\\n\"` ← الصحيح: `cout << x + y << endl;`\n\nالخطأ 3: `x / y` ← الصحيح لحساب باقي القسمة: `x % y`.\n\nالبرنامج المصحح:\n\n```cpp\n#include <iostream>\nusing namespace std;\n\nint main()\n{\n    int x, y;\n\n    cin >> x >> y;\n\n    cout << x + y << endl;\n    cout << x % y << endl;\n\n    return 0;\n}\n```"
+          "correction": "الخطأ 1: `char x, y;` ← الصحيح: `int x, y;`\n\nالخطأ 2: `cin << x + y << \"\\n\"` ← الصحيح: `cout << x + y << endl;`\n\nالخطأ 3: `x / y` ← الصحيح لحساب باقي القسمة: `x % y`.\n\nالبرنامج المصحح:\n\n```cpp\n#include <iostream.h>\n\nmain()\n{\n[[fix]]    int x, y;[[/fix]]\n\n    cin >> x >> y;\n\n[[fix]]    cout << x + y << endl;[[/fix]]\n[[fix]]    cout << x % y << endl;[[/fix]]\n\n    return 0;\n}\n```"
         }
       },
       {
@@ -483,7 +483,7 @@ const QUESTION_SECTIONS = [
         "body": "صحح الأخطاء الموجودة في البرنامج التالي، والذي يقوم بقراءة نصف قطر دائرة ثم يطبع قيمة محيطها ومساحتها.\r\n\r\n```cpp\r\n#include <iostream.h>\r\n\r\nmain()\r\n{\r\n    bool r;\r\n\r\n    double s, m;\r\n\r\n    double p = 3.14;\r\n\r\n    cin >> r;\r\n\r\n    m = 2 * p * r;\r\n\r\n    s = p * r * r;\r\n\r\n    cin >> \"m = \" >> m >> \"\\n\";\r\n\r\n    cout << \"s = \" << s << \"\\n\";\r\n\r\n    return 0;\r\n}\r\n```",
         "answer": {
           "verdict": "التصحيح",
-          "correction": "الخطأ 1: `bool r;` ← الصحيح: `float r;`\n\nالخطأ 2: `double s, m;` و`double p` ← نستخدم `float`.\n\nالخطأ 3: `cin >> \"m = \" >> m >> \"\\n\";` ← الصحيح للطباعة: `cout << \"m = \" << m << endl;`.\n\nالبرنامج المصحح:\n\n```cpp\n#include <iostream>\nusing namespace std;\n\nint main()\n{\n    float r, s, m, p = 3.14;\n\n    cin >> r;\n\n    m = 2 * p * r;\n    s = p * r * r;\n\n    cout << \"m = \" << m << endl;\n    cout << \"s = \" << s << endl;\n\n    return 0;\n}\n```"
+          "correction": "الخطأ 1: `bool r;` ← الصحيح: `float r;`\n\nالخطأ 2: `double s, m;` و`double p` ← نستخدم `float`.\n\nالخطأ 3: `cin >> \"m = \" >> m >> \"\\n\";` ← الصحيح للطباعة: `cout << \"m = \" << m << endl;`.\n\nالبرنامج المصحح:\n\n```cpp\n#include <iostream.h>\n\nmain()\n{\n[[fix]]    float r, s, m, p = 3.14;[[/fix]]\n\n    cin >> r;\n\n    m = 2 * p * r;\n    s = p * r * r;\n\n[[fix]]    cout << \"m = \" << m << endl;[[/fix]]\n    cout << \"s = \" << s << endl;\n\n    return 0;\n}\n```"
         }
       },
       {
@@ -492,7 +492,7 @@ const QUESTION_SECTIONS = [
         "body": "صحح الأخطاء الموجودة في البرنامج التالي، والذي يقوم بحساب مجموع الأعداد من `30` إلى `50`.\r\n\r\n```cpp\r\n#include <iostream.h>\r\n\r\nmain()\r\n{\r\n    char sum = 0;\r\n\r\n    while (i = 1; i++; i <= 20)\r\n    {\r\n        sum == sum + 0;\r\n    }\r\n\r\n    cin << \"sum is\" << i;\r\n\r\n    return 0;\r\n}\r\n```",
         "answer": {
           "verdict": "التصحيح",
-          "correction": "الخطأ 1: `char sum = 0;` ← الصحيح: `int sum = 0, i = 30;`\n\nالخطأ 2: `while (i = 1; i++; i <= 20)` ← `while` يحتوي شرطًا واحدًا فقط: `while (i <= 50)`.\n\nالخطأ 3: `sum == sum + 0;` ← الصحيح: `sum = sum + i;` ثم زيادة `i`.\n\nالخطأ 4: `cin << \"sum is\" << i;` ← الصحيح: `cout << \"sum is \" << sum;`.\n\nالبرنامج المصحح:\n\n```cpp\n#include <iostream>\nusing namespace std;\n\nint main()\n{\n    int sum = 0, i = 30;\n\n    while (i <= 50)\n    {\n        sum = sum + i;\n        i++;\n    }\n\n    cout << \"sum is \" << sum;\n\n    return 0;\n}\n```"
+          "correction": "الخطأ 1: `char sum = 0;` ← الصحيح: `int sum = 0, i = 30;`\n\nالخطأ 2: `while (i = 1; i++; i <= 20)` ← `while` يحتوي شرطًا واحدًا فقط: `while (i <= 50)`.\n\nالخطأ 3: `sum == sum + 0;` ← الصحيح: `sum = sum + i;` ثم زيادة `i`.\n\nالخطأ 4: `cin << \"sum is\" << i;` ← الصحيح: `cout << \"sum is \" << sum;`.\n\nالبرنامج المصحح:\n\n```cpp\n#include <iostream.h>\n\nmain()\n{\n[[fix]]    int sum = 0, i = 30;[[/fix]]\n\n[[fix]]    while (i <= 50)[[/fix]]\n    {\n[[fix]]        sum = sum + i;[[/fix]]\n[[fix]]        i++;[[/fix]]\n    }\n\n[[fix]]    cout << \"sum is \" << sum;[[/fix]]\n\n    return 0;\n}\n```"
         }
       },
       {
@@ -501,7 +501,7 @@ const QUESTION_SECTIONS = [
         "body": "صحح الأخطاء الموجودة في البرنامج التالي، والذي يقوم بقراءة مجموع `3` أعداد صحيحة ومتوسطها الحسابي.\r\n\r\n```cpp\r\ninclude <iostream.h>\r\n\r\nin()\r\n{\r\n    float x1, x2, x3;\r\n\r\n    cout >> x1 >> x2 >> x3;\r\n\r\n    cin << x1 + x2 + x3\r\n\r\n    cout < x1 + x2 + x3 / 3;\r\n\r\n    return 0;\r\n}\r\n```",
         "answer": {
           "verdict": "التصحيح",
-          "correction": "الخطأ 1: `include <iostream.h>` ← ينقص الرمز `#` في بداية السطر.\n\nالخطأ 2: `in()` ← الصحيح: `main()`.\n\nالخطأ 3: ينقص التصريح عن `sum` و`average`.\n\nالخطأ 4: `cout >> x1 >> x2 >> x3;` ← الصحيح للإدخال: `cin >> x1 >> x2 >> x3;`\n\nالخطأ 5: `cin << x1 + x2 + x3` ← الصحيح حساب المجموع في المتحول `sum`.\n\nالخطأ 6: `cout < x1 + x2 + x3 / 3;` ← الصحيح حساب المتوسط ثم طباعته باستخدام `<<`.\n\nالبرنامج المصحح:\n\n```cpp\n#include <iostream>\nusing namespace std;\n\nint main()\n{\n    int x1, x2, x3, sum;\n    float average;\n\n    cin >> x1 >> x2 >> x3;\n\n    sum = x1 + x2 + x3;\n    average = sum / 3.0;\n\n    cout << \"Sum = \" << sum << endl;\n    cout << \"Average = \" << average << endl;\n\n    return 0;\n}\n```"
+          "correction": "الخطأ 1: `include <iostream.h>` ← ينقص الرمز `#` في بداية السطر.\n\nالخطأ 2: `in()` ← الصحيح: `main()`.\n\nالخطأ 3: ينقص التصريح عن `sum` و`average`.\n\nالخطأ 4: `cout >> x1 >> x2 >> x3;` ← الصحيح للإدخال: `cin >> x1 >> x2 >> x3;`\n\nالخطأ 5: `cin << x1 + x2 + x3` ← الصحيح حساب المجموع في المتحول `sum`.\n\nالخطأ 6: `cout < x1 + x2 + x3 / 3;` ← الصحيح حساب المتوسط ثم طباعته باستخدام `<<`.\n\nالبرنامج المصحح:\n\n```cpp\n[[fix]]#include <iostream.h>[[/fix]]\n\n[[fix]]main()[[/fix]]\n{\n[[fix]]    int x1, x2, x3, sum;[[/fix]]\n[[fix]]    float average;[[/fix]]\n\n[[fix]]    cin >> x1 >> x2 >> x3;[[/fix]]\n\n[[fix]]    sum = x1 + x2 + x3;[[/fix]]\n[[fix]]    average = sum / 3.0;[[/fix]]\n\n[[fix]]    cout << \"Sum = \" << sum << endl;[[/fix]]\n[[fix]]    cout << \"Average = \" << average << endl;[[/fix]]\n\n    return 0;\n}\n```"
         }
       },
       {
@@ -510,7 +510,7 @@ const QUESTION_SECTIONS = [
         "body": "صحح الأخطاء الموجودة في البرنامج التالي، والذي يقوم بحساب مجموع الأعداد الزوجية ضمن المجال من `1` إلى `30`.\r\n\r\n```cpp\r\n#include <math.h>\r\n\r\nmain()\r\n{\r\n    int sum = 1;\r\n\r\n    for (int i = 1; i <= 10; i++)\r\n    {\r\n        if (i / 2 == 0)\r\n            sum = sum + 1;\r\n    }\r\n\r\n    cout << \"sum is :\" << i;\r\n\r\n    return 0;\r\n}\r\n```",
         "answer": {
           "verdict": "التصحيح",
-          "correction": "الخطأ 1: `#include <math.h>` ← البرنامج يحتاج مكتبة الإدخال والإخراج: `#include <iostream>`.\n\nالخطأ 2: `int sum = 1;` ← الصحيح: `int sum = 0, i;`\n\nالخطأ 3: `i <= 10` ← الصحيح للمجال المطلوب: `i <= 30`.\n\nالخطأ 4: `if (i / 2 == 0)` ← الصحيح: `if (i % 2 == 0)`.\n\nالخطأ 5: `sum = sum + 1;` ← الصحيح: `sum = sum + i;`\n\nالخطأ 6: طباعة `i` ← الصحيح طباعة `sum`.\n\nالبرنامج المصحح:\n\n```cpp\n#include <iostream>\nusing namespace std;\n\nint main()\n{\n    int sum = 0, i;\n\n    for (i = 1; i <= 30; i++)\n    {\n        if (i % 2 == 0)\n            sum = sum + i;\n    }\n\n    cout << \"sum is : \" << sum;\n\n    return 0;\n}\n```"
+          "correction": "الخطأ 1: `#include <math.h>` ← البرنامج يحتاج مكتبة الإدخال والإخراج: `#include <iostream>`.\n\nالخطأ 2: `int sum = 1;` ← الصحيح: `int sum = 0, i;`\n\nالخطأ 3: `i <= 10` ← الصحيح للمجال المطلوب: `i <= 30`.\n\nالخطأ 4: `if (i / 2 == 0)` ← الصحيح: `if (i % 2 == 0)`.\n\nالخطأ 5: `sum = sum + 1;` ← الصحيح: `sum = sum + i;`\n\nالخطأ 6: طباعة `i` ← الصحيح طباعة `sum`.\n\nالبرنامج المصحح:\n\n```cpp\n[[fix]]#include <iostream.h>[[/fix]]\n\nmain()\n{\n[[fix]]    int sum = 0, i;[[/fix]]\n\n[[fix]]    for (i = 1; i <= 30; i++)[[/fix]]\n    {\n[[fix]]        if (i % 2 == 0)[[/fix]]\n[[fix]]            sum = sum + i;[[/fix]]\n    }\n\n[[fix]]    cout << \"sum is : \" << sum;[[/fix]]\n\n    return 0;\n}\n```"
         }
       },
       {
@@ -519,7 +519,7 @@ const QUESTION_SECTIONS = [
         "body": "صحح الأخطاء الموجودة في البرنامج التالي، والذي يقوم بحساب مجموع الأعداد الزوجية الموجودة في المجال من `0` إلى `30`.\r\n\r\n```cpp\r\n#include <iostream.h>\r\n\r\nmain()\r\n{\r\n    char sum = 0;\r\n\r\n    for (i = 1; i <= 15; i--)\r\n    {\r\n        if (i / 2 = 0)\r\n            sum = sum + 1;\r\n    }\r\n\r\n    cin << \"sum is : \" << i;\r\n\r\n    return 0;\r\n}\r\n```",
         "answer": {
           "verdict": "التصحيح",
-          "correction": "الخطأ 1: `char sum = 0;` ← الصحيح: `int sum = 0, i;`\n\nالخطأ 2: المتحول `i` غير مصرح عنه، ويجب أن تبدأ الحلقة من `0` وتنتهي عند `30` مع `i++`.\n\nالخطأ 3: `if (i / 2 = 0)` ← الصحيح: `if (i % 2 == 0)`.\n\nالخطأ 4: `sum = sum + 1;` ← الصحيح: `sum = sum + i;`\n\nالخطأ 5: `cin << \"sum is : \" << i;` ← الصحيح: `cout << \"sum is : \" << sum;`.\n\nالبرنامج المصحح:\n\n```cpp\n#include <iostream>\nusing namespace std;\n\nint main()\n{\n    int sum = 0, i;\n\n    for (i = 0; i <= 30; i++)\n    {\n        if (i % 2 == 0)\n            sum = sum + i;\n    }\n\n    cout << \"sum is : \" << sum;\n\n    return 0;\n}\n```"
+          "correction": "الخطأ 1: `char sum = 0;` ← الصحيح: `int sum = 0, i;`\n\nالخطأ 2: المتحول `i` غير مصرح عنه، ويجب أن تبدأ الحلقة من `0` وتنتهي عند `30` مع `i++`.\n\nالخطأ 3: `if (i / 2 = 0)` ← الصحيح: `if (i % 2 == 0)`.\n\nالخطأ 4: `sum = sum + 1;` ← الصحيح: `sum = sum + i;`\n\nالخطأ 5: `cin << \"sum is : \" << i;` ← الصحيح: `cout << \"sum is : \" << sum;`.\n\nالبرنامج المصحح:\n\n```cpp\n#include <iostream.h>\n\nmain()\n{\n[[fix]]    int sum = 0, i;[[/fix]]\n\n[[fix]]    for (i = 0; i <= 30; i++)[[/fix]]\n    {\n[[fix]]        if (i % 2 == 0)[[/fix]]\n[[fix]]            sum = sum + i;[[/fix]]\n    }\n\n[[fix]]    cout << \"sum is : \" << sum;[[/fix]]\n\n    return 0;\n}\n```"
         }
       },
       {
@@ -528,7 +528,7 @@ const QUESTION_SECTIONS = [
         "body": "صحح الأخطاء الموجودة في البرنامج التالي، والذي يقوم بحساب المتوسط الحسابي للأعداد الموجودة في المجال من `1` إلى `10`.\r\n\r\n```cpp\r\n#include <iostream.h>\r\n\r\nmain()\r\n{\r\n    int sum = 1;\r\n\r\n    for (int i = 1; i <= 10; i--)\r\n    {\r\n        sum = sum + 1;\r\n    }\r\n\r\n    cout << \"avg = \" << i;\r\n\r\n    return 0;\r\n}\r\n```",
         "answer": {
           "verdict": "التصحيح",
-          "correction": "الخطأ 1: `int sum = 1;` ← الصحيح: `int sum = 0, i;` مع التصريح عن `avg`.\n\nالخطأ 2: `i--` ← الصحيح: `i++`.\n\nالخطأ 3: `sum = sum + 1;` ← الصحيح: `sum = sum + i;`\n\nالخطأ 4: ينقص حساب المتوسط: `avg = sum / 10.0;`.\n\nالخطأ 5: طباعة `i` ← الصحيح طباعة `avg`.\n\nالبرنامج المصحح:\n\n```cpp\n#include <iostream>\nusing namespace std;\n\nint main()\n{\n    int sum = 0, i;\n    float avg;\n\n    for (i = 1; i <= 10; i++)\n    {\n        sum = sum + i;\n    }\n\n    avg = sum / 10.0;\n\n    cout << \"avg = \" << avg;\n\n    return 0;\n}\n```"
+          "correction": "الخطأ 1: `int sum = 1;` ← الصحيح: `int sum = 0, i;` مع التصريح عن `avg`.\n\nالخطأ 2: `i--` ← الصحيح: `i++`.\n\nالخطأ 3: `sum = sum + 1;` ← الصحيح: `sum = sum + i;`\n\nالخطأ 4: ينقص حساب المتوسط: `avg = sum / 10.0;`.\n\nالخطأ 5: طباعة `i` ← الصحيح طباعة `avg`.\n\nالبرنامج المصحح:\n\n```cpp\n#include <iostream.h>\n\nmain()\n{\n[[fix]]    int sum = 0, i;[[/fix]]\n[[fix]]    float avg;[[/fix]]\n\n[[fix]]    for (i = 1; i <= 10; i++)[[/fix]]\n    {\n[[fix]]        sum = sum + i;[[/fix]]\n    }\n\n[[fix]]    avg = sum / 10.0;[[/fix]]\n\n[[fix]]    cout << \"avg = \" << avg;[[/fix]]\n\n    return 0;\n}\n```"
         }
       },
       {
@@ -537,7 +537,7 @@ const QUESTION_SECTIONS = [
         "body": "صحح الأخطاء الموجودة في البرنامج التالي، والذي يقوم بقراءة نصف قطر دائرة، ثم يطبع قيمة قطرها ومحيطها ومساحتها.\r\n\r\n```cpp\r\n#include <iostream.h>\r\n\r\nmain()\r\n{\r\n    bool r;\r\n\r\n    float p = 3.14;\r\n\r\n    cin >> r\r\n\r\n    cin << r * 2 << \"\\n\";\r\n\r\n    cout << 2 * p * R << \"\\n\";\r\n\r\n    cout << p * r * r << \"\\n\";\r\n\r\n    return 0;\r\n}\r\n```",
         "answer": {
           "verdict": "التصحيح",
-          "correction": "الخطأ 1: `bool r;` ← الصحيح: `float r;` مع التصريح عن القطر والمحيط والمساحة.\n\nالخطأ 2: ينقص الفاصل المنقوط بعد `cin >> r`.\n\nالخطأ 3: `cin << r * 2` ← الصحيح للطباعة: `cout << diameter`.\n\nالخطأ 4: استخدام `R` خطأ لأن اللغة حساسة لحالة الأحرف؛ الصحيح `r`.\n\nالبرنامج المصحح:\n\n```cpp\n#include <iostream>\nusing namespace std;\n\nint main()\n{\n    float r, p = 3.14, diameter, circumference, area;\n\n    cin >> r;\n\n    diameter = r * 2;\n    circumference = 2 * p * r;\n    area = p * r * r;\n\n    cout << diameter << endl;\n    cout << circumference << endl;\n    cout << area << endl;\n\n    return 0;\n}\n```"
+          "correction": "الخطأ 1: `bool r;` ← الصحيح: `float r;` مع التصريح عن القطر والمحيط والمساحة.\n\nالخطأ 2: ينقص الفاصل المنقوط بعد `cin >> r`.\n\nالخطأ 3: `cin << r * 2` ← الصحيح للطباعة: `cout << diameter`.\n\nالخطأ 4: استخدام `R` خطأ لأن اللغة حساسة لحالة الأحرف؛ الصحيح `r`.\n\nالبرنامج المصحح:\n\n```cpp\n#include <iostream.h>\n\nmain()\n{\n[[fix]]    float r, p = 3.14, diameter, circumference, area;[[/fix]]\n\n[[fix]]    cin >> r;[[/fix]]\n\n[[fix]]    diameter = r * 2;[[/fix]]\n[[fix]]    circumference = 2 * p * r;[[/fix]]\n[[fix]]    area = p * r * r;[[/fix]]\n\n[[fix]]    cout << diameter << endl;[[/fix]]\n[[fix]]    cout << circumference << endl;[[/fix]]\n[[fix]]    cout << area << endl;[[/fix]]\n\n    return 0;\n}\n```"
         }
       }
     ]

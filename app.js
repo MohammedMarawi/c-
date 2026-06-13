@@ -23,7 +23,7 @@ function inlineFormat(text) {
   return escapeHtml(text).replace(/`([^`]+)`/g, "<code>$1</code>");
 }
 
-function highlightCpp(code) {
+function highlightCppSegment(code) {
   const keywords = new Set([
     "alignas", "alignof", "and", "asm", "auto", "break", "case", "catch",
     "class", "const", "constexpr", "continue", "default", "delete", "do",
@@ -61,6 +61,16 @@ function highlightCpp(code) {
     cursor = match.index + token.length;
   }
   return output + escapeHtml(code.slice(cursor));
+}
+
+function highlightCpp(code) {
+  const parts = code.split(/(\[\[fix\]\][\s\S]*?\[\[\/fix\]\])/g);
+  return parts.map((part) => {
+    if (part.startsWith("[[fix]]") && part.endsWith("[[/fix]]")) {
+      return `<span class="tok-fix">${highlightCppSegment(part.slice(7, -8))}</span>`;
+    }
+    return highlightCppSegment(part);
+  }).join("");
 }
 
 function renderMarkdown(markdown) {
