@@ -471,10 +471,10 @@ const QUESTION_SECTIONS = [
       {
         "id": "debug-code-4",
         "number": 4,
-        "body": "صحح الأخطاء الموجودة في البرنامج التالي، والذي يقوم بقراءة نصف قطر دائرة ثم يطبع قيمة محيطها ومساحتها.\r\n\r\n```cpp\r\n#include <iostream.h>\r\n\r\nmain()\r\n{\r\n    bool r;\r\n\r\n    double s, m;\r\n\r\n    double p = 3.14;\r\n\r\n    cin >> r;\r\n\r\n    m = 2 * p * r;\r\n\r\n    s = p * r * r;\r\n\r\n    cin >> \"m = \" >> m >> \"\\n\";\r\n\r\n    cout << \"s = \" << s << \"\\n\";\r\n\r\n    return 0;\r\n}\r\n```",
+        "body": "صحح الأخطاء الموجودة في البرنامج التالي، والذي يقوم بقراءة نصف قطر دائرة ثم يطبع قيمة محيطها ومساحتها.\r\n\r\n```cpp\r\n#include <iostream.h>\r\n\r\nmain()\r\n{\r\n    double r;\r\n\r\n    double s, m;\r\n\r\n    double p = 3.14;\r\n\r\n    cin >> r;\r\n\r\n    m = 2 * p * r;\r\n\r\n    s = p * r * r;\r\n\r\n    cin >> \"m = \" >> m >> \"\\n\";\r\n\r\n    cout << \"s = \" << s << \"\\n\";\r\n\r\n    return 0;\r\n}\r\n```",
         "answer": {
           "verdict": "التصحيح",
-          "correction": "الخطأ 1: `bool r;` ← الصحيح: `float r;`\n\nالخطأ 2: `double s, m;` و`double p` ← نستخدم `float`.\n\nالخطأ 3: `cin >> \"m = \" >> m >> \"\\n\";` ← الصحيح للطباعة: `cout << \"m = \" << m << \"\\n\";`.\n\nالبرنامج المصحح:\n\n```cpp\n#include <iostream.h>\n\nmain()\n{\n    [[fix]]float[[/fix]] r, s, m, p = 3.14;\n\n    cin >> r;\n\n    m = 2 * p * r;\n    s = p * r * r;\n\n    [[fix]]cout[[/fix]] [[fix]]<<[[/fix]] \"m = \" [[fix]]<<[[/fix]] m [[fix]]<<[[/fix]] \"\\n\";\n    cout << \"s = \" << s << \"\\n\";\n\n    return 0;\n}\n```"
+          "correction": "الخطأ 1: `cin >> \"m = \" >> m >> \"\\n\";` ← الصحيح للطباعة: `cout << \"m = \" << m << \"\\n\";`.\n\nالبرنامج المصحح:\n\n```cpp\n#include <iostream.h>\n\nmain()\n{\n    double r;\n\n    double s, m;\n\n    double p = 3.14;\n\n    cin >> r;\n\n    m = 2 * p * r;\n    s = p * r * r;\n\n    [[fix]]cout[[/fix]] [[fix]]<<[[/fix]] \"m = \" [[fix]]<<[[/fix]] m [[fix]]<<[[/fix]] \"\\n\";\n    cout << \"s = \" << s << \"\\n\";\n\n    return 0;\n}\n```"
         }
       },
       {
