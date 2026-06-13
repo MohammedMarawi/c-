@@ -489,7 +489,7 @@ const QUESTION_SECTIONS = [
       {
         "id": "debug-code-6",
         "number": 6,
-        "body": "صحح الأخطاء الموجودة في البرنامج التالي، والذي يقوم بقراءة مجموع `3` أعداد صحيحة ومتوسطها الحسابي.\r\n\r\n```cpp\r\ninclude <iostream.h>\r\n\r\nin()\r\n{\r\n    float x1, x2, x3;\r\n\r\n    cout >> x1 >> x2 >> x3;\r\n\r\n    cin << x1 + x2 + x3\r\n\r\n    cout < x1 + x2 + x3 / 3;\r\n\r\n    return 0;\r\n}\r\n```",
+        "body": "صحح الأخطاء الموجودة في البرنامج التالي، والذي يقوم بقراءة `3` أعداد، ثم يطبع مجموعها ومتوسطها الحسابي.\r\n\r\n```cpp\r\ninclude <iostream.h>\r\n\r\nin()\r\n{\r\n    float x1, x2, x3;\r\n\r\n    cout >> x1 >> x2 >> x3;\r\n\r\n    cin << x1 + x2 + x3\r\n\r\n    cout < x1 + x2 + x3 / 3;\r\n\r\n    return 0;\r\n}\r\n```",
         "answer": {
           "verdict": "التصحيح",
           "correction": "الخطأ 1: `include <iostream.h>` ← ينقص الرمز `#` في بداية السطر.\n\nالخطأ 2: `in()` ← الصحيح: `main()`.\n\nالخطأ 3: `cout >> x1 >> x2 >> x3;` ← الصحيح للإدخال: `cin >> x1 >> x2 >> x3;`\n\nالخطأ 4: `cin << x1 + x2 + x3` ← الصحيح للطباعة: `cout << x1 + x2 + x3;`\n\nالخطأ 5: `cout < x1 + x2 + x3 / 3;` ← الصحيح: `cout << (x1 + x2 + x3) / 3;`\n\nالبرنامج المصحح:\n\n```cpp\n[[fix]]#[[/fix]]include <iostream.h>\n\n[[fix]]main[[/fix]]()\n{\n    float x1, x2, x3;\n\n    [[fix]]cin[[/fix]] >> x1 >> x2 >> x3;\n\n    [[fix]]cout[[/fix]] << x1 + x2 + x3[[fix]];[[/fix]]\n\n    cout <[[fix]]<[[/fix]] [[fix]]([[/fix]]x1 + x2 + x3[[fix]])[[/fix]] / 3;\n\n    return 0;\n}\n```"
