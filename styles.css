@@ -34,8 +34,7 @@ button { color: inherit; }
   position: sticky;
   z-index: 10;
   top: 0;
-  display: grid;
-  grid-template-columns: 44px minmax(0, 1fr) 44px;
+  display: flex;
   align-items: center;
   gap: 10px;
   min-height: 68px;
@@ -47,8 +46,13 @@ button { color: inherit; }
 
 .brand {
   display: flex;
+  flex: 1 1 auto;
   align-items: center;
   gap: 10px;
+  min-width: 0;
+}
+
+.brand > div {
   min-width: 0;
 }
 
@@ -68,11 +72,17 @@ button { color: inherit; }
 }
 
 .brand strong, .brand span { display: block; }
+.brand strong, .brand div > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .brand strong { font-size: 14px; line-height: 1.4; }
 .brand div > span { color: var(--muted); font-size: 11px; line-height: 1.4; }
 
 .icon-button, .scroll-top {
   display: grid;
+  flex: 0 0 42px;
   width: 42px;
   height: 42px;
   padding: 0;
