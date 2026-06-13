@@ -447,7 +447,7 @@ const QUESTION_SECTIONS = [
         "body": "صحح الأخطاء الموجودة في البرنامج التالي، والذي يأخذ كدخل عددين صحيحين ثم يقوم بحساب مجموعهما وباقي قسمة الأول على الثاني.\r\n\r\n```cpp\r\n#include <iostream.h>\r\n\r\nmain()\r\n{\r\n    char x, y;\r\n\r\n    cin >> x >> y;\r\n\r\n    cin << \"Sum=\" << x+y << \"\\n\"\r\n\r\n    cout << \"Mod=\" << x/y << \"\\n\";\r\n\r\n    return 0;\r\n}\r\n```",
         "answer": {
           "verdict": "التصحيح",
-          "correction": "الخطأ 1: `char x, y;` ← الصحيح: `int x, y;`\n\nالخطأ 2: `cin << \"Sum=\" << x+y << \"\\n\"` ← نستخدم `cout` ونضيف الفاصلة المنقوطة.\n\nالخطأ 3: `x / y` ← الصحيح لحساب باقي القسمة: `x % y`.\n\nالبرنامج المصحح:\n\n```cpp\n#include <iostream.h>\n\nmain()\n{\n    [[fix]]int[[/fix]] x, y;\n\n    cin >> x >> y;\n\n    [[fix]]cout[[/fix]] << \"Sum = \" << x + y << [[fix]]endl;[[/fix]]\n    cout << \"Mod = \" << x [[fix]]%[[/fix]] y << endl;\n\n    return 0;\n}\n```"
+          "correction": "الخطأ 1: `char x, y;` ← الصحيح: `int x, y;`\n\nالخطأ 2: `cin << \"Sum=\" << x+y << \"\\n\"` ← نستخدم `cout` ونضيف الفاصلة المنقوطة.\n\nالخطأ 3: `x / y` ← الصحيح لحساب باقي القسمة: `x % y`.\n\nالبرنامج المصحح:\n\n```cpp\n#include <iostream.h>\n\nmain()\n{\n    [[fix]]int[[/fix]] x, y;\n\n    cin >> x >> y;\n\n    [[fix]]cout[[/fix]] << \"Sum = \" << x + y << \"\\n\"[[fix]];[[/fix]]\n    cout << \"Mod = \" << x [[fix]]%[[/fix]] y << \"\\n\";\n\n    return 0;\n}\n```"
         }
       },
       {
@@ -474,7 +474,7 @@ const QUESTION_SECTIONS = [
         "body": "صحح الأخطاء الموجودة في البرنامج التالي، والذي يأخذ كدخل عددين صحيحين ثم يطبع مجموعهما وباقي قسمة الأول على الثاني.\r\n\r\n```cpp\r\n#include <iostream.h>\r\n\r\nmain()\r\n{\r\n    char x, y;\r\n\r\n    cin >> x >> y;\r\n\r\n    cin << x + y << \"\\n\"\r\n\r\n    cout << x / y << \"\\n\";\r\n\r\n    return 0;\r\n}\r\n```",
         "answer": {
           "verdict": "التصحيح",
-          "correction": "الخطأ 1: `char x, y;` ← الصحيح: `int x, y;`\n\nالخطأ 2: `cin << x + y << \"\\n\"` ← الصحيح: `cout << x + y << endl;`\n\nالخطأ 3: `x / y` ← الصحيح لحساب باقي القسمة: `x % y`.\n\nالبرنامج المصحح:\n\n```cpp\n#include <iostream.h>\n\nmain()\n{\n    [[fix]]int[[/fix]] x, y;\n\n    cin >> x >> y;\n\n    [[fix]]cout[[/fix]] << x + y << [[fix]]endl;[[/fix]]\n    cout << x [[fix]]%[[/fix]] y << endl;\n\n    return 0;\n}\n```"
+          "correction": "الخطأ 1: `char x, y;` ← الصحيح: `int x, y;`\n\nالخطأ 2: `cin << x + y << \"\\n\"` ← الصحيح: `cout << x + y << \"\\n\";`\n\nالخطأ 3: `x / y` ← الصحيح لحساب باقي القسمة: `x % y`.\n\nالبرنامج المصحح:\n\n```cpp\n#include <iostream.h>\n\nmain()\n{\n    [[fix]]int[[/fix]] x, y;\n\n    cin >> x >> y;\n\n    [[fix]]cout[[/fix]] << x + y << \"\\n\"[[fix]];[[/fix]]\n    cout << x [[fix]]%[[/fix]] y << \"\\n\";\n\n    return 0;\n}\n```"
         }
       },
       {
@@ -483,7 +483,7 @@ const QUESTION_SECTIONS = [
         "body": "صحح الأخطاء الموجودة في البرنامج التالي، والذي يقوم بقراءة نصف قطر دائرة ثم يطبع قيمة محيطها ومساحتها.\r\n\r\n```cpp\r\n#include <iostream.h>\r\n\r\nmain()\r\n{\r\n    bool r;\r\n\r\n    double s, m;\r\n\r\n    double p = 3.14;\r\n\r\n    cin >> r;\r\n\r\n    m = 2 * p * r;\r\n\r\n    s = p * r * r;\r\n\r\n    cin >> \"m = \" >> m >> \"\\n\";\r\n\r\n    cout << \"s = \" << s << \"\\n\";\r\n\r\n    return 0;\r\n}\r\n```",
         "answer": {
           "verdict": "التصحيح",
-          "correction": "الخطأ 1: `bool r;` ← الصحيح: `float r;`\n\nالخطأ 2: `double s, m;` و`double p` ← نستخدم `float`.\n\nالخطأ 3: `cin >> \"m = \" >> m >> \"\\n\";` ← الصحيح للطباعة: `cout << \"m = \" << m << endl;`.\n\nالبرنامج المصحح:\n\n```cpp\n#include <iostream.h>\n\nmain()\n{\n    [[fix]]float[[/fix]] r, s, m, p = 3.14;\n\n    cin >> r;\n\n    m = 2 * p * r;\n    s = p * r * r;\n\n    [[fix]]cout[[/fix]] [[fix]]<<[[/fix]] \"m = \" [[fix]]<<[[/fix]] m [[fix]]<<[[/fix]] endl;\n    cout << \"s = \" << s << endl;\n\n    return 0;\n}\n```"
+          "correction": "الخطأ 1: `bool r;` ← الصحيح: `float r;`\n\nالخطأ 2: `double s, m;` و`double p` ← نستخدم `float`.\n\nالخطأ 3: `cin >> \"m = \" >> m >> \"\\n\";` ← الصحيح للطباعة: `cout << \"m = \" << m << \"\\n\";`.\n\nالبرنامج المصحح:\n\n```cpp\n#include <iostream.h>\n\nmain()\n{\n    [[fix]]float[[/fix]] r, s, m, p = 3.14;\n\n    cin >> r;\n\n    m = 2 * p * r;\n    s = p * r * r;\n\n    [[fix]]cout[[/fix]] [[fix]]<<[[/fix]] \"m = \" [[fix]]<<[[/fix]] m [[fix]]<<[[/fix]] \"\\n\";\n    cout << \"s = \" << s << \"\\n\";\n\n    return 0;\n}\n```"
         }
       },
       {
@@ -501,7 +501,7 @@ const QUESTION_SECTIONS = [
         "body": "صحح الأخطاء الموجودة في البرنامج التالي، والذي يقوم بقراءة مجموع `3` أعداد صحيحة ومتوسطها الحسابي.\r\n\r\n```cpp\r\ninclude <iostream.h>\r\n\r\nin()\r\n{\r\n    float x1, x2, x3;\r\n\r\n    cout >> x1 >> x2 >> x3;\r\n\r\n    cin << x1 + x2 + x3\r\n\r\n    cout < x1 + x2 + x3 / 3;\r\n\r\n    return 0;\r\n}\r\n```",
         "answer": {
           "verdict": "التصحيح",
-          "correction": "الخطأ 1: `include <iostream.h>` ← ينقص الرمز `#` في بداية السطر.\n\nالخطأ 2: `in()` ← الصحيح: `[[fix]]main[[/fix]]()`.\n\nالخطأ 3: ينقص التصريح عن `sum` و`average`.\n\nالخطأ 4: `cout >> x1 >> x2 >> x3;` ← الصحيح للإدخال: `cin >> x1 >> x2 >> x3;`\n\nالخطأ 5: `cin << x1 + x2 + x3` ← الصحيح حساب المجموع في المتحول `sum`.\n\nالخطأ 6: `cout < x1 + x2 + x3 / 3;` ← الصحيح حساب المتوسط ثم طباعته باستخدام `<<`.\n\nالبرنامج المصحح:\n\n```cpp\n[[fix]]#[[/fix]]include <iostream.h>\n\nmain()\n{\n    [[fix]]int x1, x2, x3, sum;[[/fix]]\n    [[fix]]float average;[[/fix]]\n\n    [[fix]]cin[[/fix]] >> x1 >> x2 >> x3;\n\n    [[fix]]sum = x1 + x2 + x3;[[/fix]]\n    [[fix]]average = sum / 3.0;[[/fix]]\n\n    [[fix]]cout << \"Sum = \" << sum << endl;[[/fix]]\n    [[fix]]cout << \"Average = \" << average << endl;[[/fix]]\n\n    return 0;\n}\n```"
+          "correction": "الخطأ 1: `include <iostream.h>` ← ينقص الرمز `#` في بداية السطر.\n\nالخطأ 2: `in()` ← الصحيح: `[[fix]]main[[/fix]]()`.\n\nالخطأ 3: ينقص التصريح عن `sum` و`average`.\n\nالخطأ 4: `cout >> x1 >> x2 >> x3;` ← الصحيح للإدخال: `cin >> x1 >> x2 >> x3;`\n\nالخطأ 5: `cin << x1 + x2 + x3` ← الصحيح حساب المجموع في المتحول `sum`.\n\nالخطأ 6: `cout < x1 + x2 + x3 / 3;` ← الصحيح حساب المتوسط ثم طباعته باستخدام `<<`.\n\nالبرنامج المصحح:\n\n```cpp\n[[fix]]#[[/fix]]include <iostream.h>\n\nmain()\n{\n    [[fix]]int x1, x2, x3, sum;[[/fix]]\n    [[fix]]float average;[[/fix]]\n\n    [[fix]]cin[[/fix]] >> x1 >> x2 >> x3;\n\n    [[fix]]sum = x1 + x2 + x3;[[/fix]]\n    [[fix]]average = sum / 3.0;[[/fix]]\n\n    [[fix]]cout << \"Sum = \" << sum[[/fix]] << \"\\n\";\n    [[fix]]cout << \"Average = \" << average[[/fix]] << \"\\n\";\n\n    return 0;\n}\n```"
         }
       },
       {
@@ -537,7 +537,7 @@ const QUESTION_SECTIONS = [
         "body": "صحح الأخطاء الموجودة في البرنامج التالي، والذي يقوم بقراءة نصف قطر دائرة، ثم يطبع قيمة قطرها ومحيطها ومساحتها.\r\n\r\n```cpp\r\n#include <iostream.h>\r\n\r\nmain()\r\n{\r\n    bool r;\r\n\r\n    float p = 3.14;\r\n\r\n    cin >> r\r\n\r\n    cin << r * 2 << \"\\n\";\r\n\r\n    cout << 2 * p * R << \"\\n\";\r\n\r\n    cout << p * r * r << \"\\n\";\r\n\r\n    return 0;\r\n}\r\n```",
         "answer": {
           "verdict": "التصحيح",
-          "correction": "الخطأ 1: `bool r;` ← الصحيح: `float r;` مع التصريح عن القطر والمحيط والمساحة.\n\nالخطأ 2: ينقص الفاصل المنقوط بعد `cin >> r`.\n\nالخطأ 3: `cin << r * 2` ← الصحيح للطباعة: `cout << diameter`.\n\nالخطأ 4: استخدام `R` خطأ لأن اللغة حساسة لحالة الأحرف؛ الصحيح `r`.\n\nالبرنامج المصحح:\n\n```cpp\n#include <iostream.h>\n\nmain()\n{\n    [[fix]]float[[/fix]] r, p = 3.14[[fix]], diameter, circumference, area[[/fix]];\n\n    cin >> r[[fix]];[[/fix]]\n\n    [[fix]]diameter = r * 2;[[/fix]]\n    [[fix]]circumference[[/fix]] = 2 * p * [[fix]]r[[/fix]];\n    [[fix]]area =[[/fix]] p * r * r;\n\n    [[fix]]cout << diameter[[/fix]] << endl;\n    cout << [[fix]]circumference[[/fix]] << endl;\n    cout << [[fix]]area[[/fix]] << endl;\n\n    return 0;\n}\n```"
+          "correction": "الخطأ 1: `bool r;` ← الصحيح: `float r;` مع التصريح عن القطر والمحيط والمساحة.\n\nالخطأ 2: ينقص الفاصل المنقوط بعد `cin >> r`.\n\nالخطأ 3: `cin << r * 2` ← الصحيح للطباعة: `cout << diameter`.\n\nالخطأ 4: استخدام `R` خطأ لأن اللغة حساسة لحالة الأحرف؛ الصحيح `r`.\n\nالبرنامج المصحح:\n\n```cpp\n#include <iostream.h>\n\nmain()\n{\n    [[fix]]float[[/fix]] r, p = 3.14[[fix]], diameter, circumference, area[[/fix]];\n\n    cin >> r[[fix]];[[/fix]]\n\n    [[fix]]diameter = r * 2;[[/fix]]\n    [[fix]]circumference[[/fix]] = 2 * p * [[fix]]r[[/fix]];\n    [[fix]]area =[[/fix]] p * r * r;\n\n    [[fix]]cout << diameter[[/fix]] << \"\\n\";\n    cout << [[fix]]circumference[[/fix]] << \"\\n\";\n    cout << [[fix]]area[[/fix]] << \"\\n\";\n\n    return 0;\n}\n```"
         }
       }
     ]
