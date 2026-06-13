@@ -120,6 +120,14 @@ main {
 
 .intro { padding: 32px 2px 22px; }
 
+.intro-note {
+  max-width: 32rem;
+  margin: 7px 0 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.8;
+}
+
 .eyebrow {
   margin: 0 0 4px;
   color: var(--accent);
