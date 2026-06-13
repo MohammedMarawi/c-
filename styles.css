@@ -63,17 +63,21 @@ button { color: inherit; }
 }
 
 .brand-mark {
-  display: grid;
+  display: flex;
   flex: 0 0 38px;
   width: 38px;
   height: 38px;
-  place-items: center;
+  align-items: center;
+  justify-content: center;
   border: 1px solid rgba(54, 211, 153, .35);
   border-radius: 7px;
   background: var(--accent-soft);
   color: var(--accent);
   font-size: 12px;
   font-weight: 800;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
   direction: ltr;
 }
 
