@@ -857,15 +857,6 @@ const QUESTION_SECTIONS = [
       {
         "id": "trace-code-29",
         "number": 29,
-        "body": "```cpp\nint x = 4, y = 11;\n\nif (x % 2 == 0 && y > 10)\n    cout << \"value is \" << x + y;\nelse\n    cout << \"The Val = \" << x * y;\n```",
-        "answer": {
-          "verdict": "الناتج",
-          "correction": "```text\nvalue is 15\n```"
-        }
-      },
-      {
-        "id": "trace-code-30",
-        "number": 30,
         "body": "```cpp\nint a = 10, b;\n\nb = a + 8 / 2;\n\ncout << b << \"\\n\";\n\nif (b <= 9)\n    cout << \"values are between 0 and 15\";\nelse\n    cout << \"values more than 15\";\n```",
         "answer": {
           "verdict": "الناتج",
@@ -873,8 +864,8 @@ const QUESTION_SECTIONS = [
         }
       },
       {
-        "id": "trace-code-31",
-        "number": 31,
+        "id": "trace-code-30",
+        "number": 30,
         "body": "```cpp\nint z = 10;\n\ncout << --z << \"\\n\";\n\ncout << z;\n\nint y = 20;\n\ncout << y << \"\\n\";\n\ncout << y;\n```",
         "answer": {
           "verdict": "الناتج",
