@@ -731,10 +731,10 @@ const QUESTION_SECTIONS = [
       {
         "id": "trace-code-15",
         "number": 15,
-        "body": "```cpp\nint x = 4, y = 11;\n\nif (x % 2 == 0 && y > 10)\n    cout << \"value is\" << x + y;\nelse\n    cout << \"The Val =\" << x * y;\n```",
+        "body": "```cpp\nint x = 4, y = 11;\n\nif (x % 2 == 0 && y > 10)\n    cout << \"value is \" << x + y;\nelse\n    cout << \"The Val = \" << x * y;\n```",
         "answer": {
           "verdict": "الناتج",
-          "correction": "```text\nvalue is15\n```"
+          "correction": "```text\nvalue is 15\n```"
         }
       },
       {
