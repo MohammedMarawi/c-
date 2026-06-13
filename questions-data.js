@@ -510,7 +510,7 @@ const QUESTION_SECTIONS = [
         "body": "صحح الأخطاء الموجودة في البرنامج التالي، والذي يقوم بحساب المتوسط الحسابي للأعداد الموجودة في المجال من `1` إلى `10`.\r\n\r\n```cpp\r\n#include <iostream.h>\r\n\r\nmain()\r\n{\r\n    int sum = 1;\r\n\r\n    for (int i = 1; i <= 10; i--)\r\n    {\r\n        sum = sum + 1;\r\n    }\r\n\r\n    cout << \"avg = \" << i;\r\n\r\n    return 0;\r\n}\r\n```",
         "answer": {
           "verdict": "التصحيح",
-          "correction": "الخطأ 1: `int sum = 1;` ← الصحيح: `int sum = 0;`\n\nالخطأ 2: `i--` ← الصحيح: `i++`.\n\nالخطأ 3: `sum = sum + 1;` ← الصحيح: `sum = sum + i;`\n\nالخطأ 4: طباعة `i` ← الصحيح طباعة المتوسط مباشرة: `sum / 10.0`.\n\nالبرنامج المصحح:\n\n```cpp\n#include <iostream.h>\n\nmain()\n{\n    int sum = [[fix]]0[[/fix]];\n\n    for (int i = 1; i <= 10; i[[fix]]++[[/fix]])\n    {\n        sum = sum + [[fix]]i[[/fix]];\n    }\n\n    cout << \"avg = \" << [[fix]]sum / 10.0[[/fix]];\n\n    return 0;\n}\n```"
+          "correction": "الخطأ 1: `int sum = 1;` ← الصحيح: `int sum = 0;`\n\nالخطأ 2: `i--` ← الصحيح: `i++`.\n\nالخطأ 3: `sum = sum + 1;` ← الصحيح: `sum = sum + i;`\n\nالخطأ 4: طباعة `i` ← الصحيح طباعة المتوسط مباشرة: `sum / 10`.\n\nالبرنامج المصحح:\n\n```cpp\n#include <iostream.h>\n\nmain()\n{\n    int sum = [[fix]]0[[/fix]];\n\n    for (int i = 1; i <= 10; i[[fix]]++[[/fix]])\n    {\n        sum = sum + [[fix]]i[[/fix]];\n    }\n\n    cout << \"avg = \" << [[fix]]sum / 10[[/fix]];\n\n    return 0;\n}\n```"
         }
       }
     ]
