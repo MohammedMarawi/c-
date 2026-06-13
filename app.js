@@ -124,6 +124,119 @@ function renderMarkdown(markdown) {
   return html.join("");
 }
 
+function flowchartShape(node, x, y, width = 150, height = 48) {
+  const label = escapeHtml(node.label);
+  const text = `<text x="${x}" y="${y + 5}" class="flowchart-text">${label}</text>`;
+
+  if (node.type === "start" || node.type === "end") {
+    return `<ellipse cx="${x}" cy="${y}" rx="${width / 2}" ry="${height / 2}" class="flowchart-shape"/>${text}`;
+  }
+  if (node.type === "input" || node.type === "output") {
+    const skew = 18;
+    return `<polygon points="${x - width / 2 + skew},${y - height / 2} ${x + width / 2},${y - height / 2} ${x + width / 2 - skew},${y + height / 2} ${x - width / 2},${y + height / 2}" class="flowchart-shape"/>${text}`;
+  }
+  if (node.type === "decision") {
+    return `<polygon points="${x},${y - height / 2} ${x + width / 2},${y} ${x},${y + height / 2} ${x - width / 2},${y}" class="flowchart-shape"/>${text}`;
+  }
+  return `<rect x="${x - width / 2}" y="${y - height / 2}" width="${width}" height="${height}" class="flowchart-shape"/>${text}`;
+}
+
+function flowchartArrow(x1, y1, x2, y2) {
+  return `<path d="M ${x1} ${y1} L ${x2} ${y2}" class="flowchart-arrow" marker-end="url(#flowArrow)"/>`;
+}
+
+function renderFlowchart(chart) {
+  const defs = `<defs><marker id="flowArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" class="flowchart-arrow-head"/></marker></defs>`;
+
+  if (chart.type === "decision-process") {
+    const [start, input, decision, yesProcess, yesOutput, noOutput, end] = chart.nodes;
+    return `
+      <div class="flowchart-wrap" dir="rtl">
+        <svg class="flowchart-svg" viewBox="0 0 360 520" role="img" aria-label="الخوارزمية البيانية">
+          ${defs}
+          ${flowchartShape(start, 180, 38, 120, 42)}
+          ${flowchartArrow(180, 59, 180, 88)}
+          ${flowchartShape(input, 180, 116, 150, 48)}
+          ${flowchartArrow(180, 140, 180, 169)}
+          ${flowchartShape(decision, 180, 205, 170, 68)}
+          ${flowchartArrow(95, 205, 73, 205)}
+          ${flowchartArrow(265, 205, 287, 205)}
+          <text x="104" y="192" class="flowchart-branch-label">لا</text>
+          <text x="256" y="192" class="flowchart-branch-label">نعم</text>
+          ${flowchartArrow(73, 205, 73, 334)}
+          ${flowchartArrow(287, 205, 287, 267)}
+          ${flowchartShape(yesProcess, 287, 294, 132, 48)}
+          ${flowchartArrow(287, 318, 287, 334)}
+          ${flowchartShape(noOutput, 73, 362, 132, 52)}
+          ${flowchartShape(yesOutput, 287, 362, 132, 52)}
+          <path d="M 73 388 L 73 425 L 180 425" class="flowchart-arrow"/>
+          <path d="M 287 388 L 287 425 L 180 425" class="flowchart-arrow"/>
+          <circle cx="180" cy="425" r="5" class="flowchart-connector"/>
+          ${flowchartArrow(180, 430, 180, 467)}
+          ${flowchartShape(end, 180, 490, 120, 42)}
+        </svg>
+      </div>`;
+  }
+
+  if (chart.type === "decision") {
+    const [start, input, decision, yesOutput, noOutput, end] = chart.nodes;
+    return `
+      <div class="flowchart-wrap" dir="rtl">
+        <svg class="flowchart-svg" viewBox="0 0 360 440" role="img" aria-label="الخوارزمية البيانية">
+          ${defs}
+          ${flowchartShape(start, 180, 38, 120, 42)}
+          ${flowchartArrow(180, 59, 180, 88)}
+          ${flowchartShape(input, 180, 116, 150, 48)}
+          ${flowchartArrow(180, 140, 180, 169)}
+          ${flowchartShape(decision, 180, 205, 170, 68)}
+          ${flowchartArrow(95, 205, 73, 205)}
+          ${flowchartArrow(265, 205, 287, 205)}
+          <text x="104" y="192" class="flowchart-branch-label">لا</text>
+          <text x="256" y="192" class="flowchart-branch-label">نعم</text>
+          ${flowchartArrow(73, 205, 73, 276)}
+          ${flowchartArrow(287, 205, 287, 276)}
+          ${flowchartShape(noOutput, 73, 304, 132, 52)}
+          ${flowchartShape(yesOutput, 287, 304, 132, 52)}
+          <path d="M 73 330 L 73 365 L 180 365" class="flowchart-arrow"/>
+          <path d="M 287 330 L 287 365 L 180 365" class="flowchart-arrow"/>
+          <circle cx="180" cy="365" r="5" class="flowchart-connector"/>
+          ${flowchartArrow(180, 370, 180, 397)}
+          ${flowchartShape(end, 180, 418, 120, 42)}
+        </svg>
+      </div>`;
+  }
+
+  const width = 360;
+  const center = width / 2;
+  const gap = 82;
+  const startY = 38;
+  const height = startY * 2 + gap * (chart.nodes.length - 1);
+  const shapes = chart.nodes.map((node, index) => {
+    const y = startY + index * gap;
+    const shape = flowchartShape(node, center, y, node.type === "decision" ? 170 : 170, node.type === "decision" ? 68 : 48);
+    const arrow = index < chart.nodes.length - 1 ? flowchartArrow(center, y + 25, center, y + gap - 25) : "";
+    return `${shape}${arrow}`;
+  }).join("");
+
+  return `<div class="flowchart-wrap" dir="rtl"><svg class="flowchart-svg" viewBox="0 0 ${width} ${height}" role="img" aria-label="الخوارزمية البيانية">${defs}${shapes}</svg></div>`;
+}
+
+function renderAlgorithm(steps) {
+  return `
+    <div class="algorithm-block">
+      <h3>الخوارزمية النصية</h3>
+      <ol>${steps.map((step) => `<li>${inlineFormat(step)}</li>`).join("")}</ol>
+    </div>`;
+}
+
+function renderAnswer(answer) {
+  return `
+    <strong class="${answer.verdict === "صح" ? "is-true" : answer.verdict === "خطأ" ? "is-false" : "is-choice"}">${answer.verdict}</strong>
+    ${answer.algorithm ? renderAlgorithm(answer.algorithm) : ""}
+    ${answer.flowchart ? `<h3 class="flowchart-title">الخوارزمية البيانية</h3>${renderFlowchart(answer.flowchart)}` : ""}
+    ${answer.correction ? `<div>${renderMarkdown(answer.correction)}</div>` : ""}`;
+}
+
 function sectionTheme(section) {
   return SECTION_THEMES[QUESTION_SECTIONS.indexOf(section)] || SECTION_THEMES[0];
 }
@@ -163,8 +276,7 @@ function renderQuestionList(section) {
         <details class="answer-box">
           <summary>عرض الإجابة</summary>
           <div class="answer-content">
-            <strong class="${item.answer.verdict === "صح" ? "is-true" : item.answer.verdict === "خطأ" ? "is-false" : "is-choice"}">${item.answer.verdict}</strong>
-            ${item.answer.correction ? `<div>${renderMarkdown(item.answer.correction)}</div>` : ""}
+            ${renderAnswer(item.answer)}
           </div>
         </details>` : ""}
     </article>

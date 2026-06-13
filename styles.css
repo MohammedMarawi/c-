@@ -438,6 +438,80 @@ pre {
 .tok-fix,
 .tok-fix span { color: #4ade80 !important; font-weight: 700; }
 
+.algorithm-block {
+  margin: 8px 0 18px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--surface);
+}
+
+.algorithm-block h3,
+.flowchart-title {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-size: 13px;
+}
+
+.algorithm-block ol {
+  margin: 0;
+  padding-right: 22px;
+  line-height: 2;
+}
+
+.algorithm-block li::marker {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.flowchart-wrap {
+  margin: 8px 0 4px;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: #0c1118;
+}
+
+.flowchart-svg {
+  display: block;
+  width: 100%;
+  min-width: 310px;
+  height: auto;
+  margin: auto;
+  padding: 10px 0;
+}
+
+.flowchart-shape {
+  fill: #151c25;
+  stroke: var(--accent);
+  stroke-width: 1.7;
+}
+
+.flowchart-text,
+.flowchart-branch-label {
+  fill: #e5edf7;
+  font-family: Tahoma, Arial, sans-serif;
+  font-size: 12px;
+  text-anchor: middle;
+  direction: rtl;
+  unicode-bidi: plaintext;
+}
+
+.flowchart-branch-label {
+  fill: var(--accent);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.flowchart-arrow {
+  fill: none;
+  stroke: #8290a2;
+  stroke-width: 1.5;
+}
+
+.flowchart-arrow-head { fill: #8290a2; }
+.flowchart-connector { fill: var(--accent); }
+
 .is-hidden { display: none !important; }
 
 @media (min-width: 640px) {

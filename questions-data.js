@@ -593,47 +593,190 @@ const QUESTION_SECTIONS = [
       {
         "id": "flowchart-1",
         "number": 1,
-        "body": "اكتب بالطريقة البيانية، أي الخوارزمية البيانية، الخوارزمية اللازمة لإدخال عدد صحيح `y` وطباعة العبارة `Positive` إذا كان موجبًا والعبارة `Negative` إذا كان سالبًا."
+        "body": "اكتب بالطريقة البيانية، أي الخوارزمية البيانية، الخوارزمية اللازمة لإدخال عدد صحيح `y` وطباعة العبارة `Positive` إذا كان موجبًا والعبارة `Negative` إذا كان سالبًا.",
+        "answer": {
+          "verdict": "الحل",
+          "flowchart": {
+            "type": "decision",
+            "nodes": [
+              { "type": "start", "label": "بداية" },
+              { "type": "input", "label": "اقرأ y" },
+              { "type": "decision", "label": "y > 0" },
+              { "type": "output", "label": "اطبع Positive" },
+              { "type": "output", "label": "اطبع Negative" },
+              { "type": "end", "label": "نهاية" }
+            ]
+          }
+        }
       },
       {
         "id": "flowchart-2",
         "number": 2,
-        "body": "اكتب الخوارزمية اللازمة لحساب ناتج:\r\n\r\n```cpp\r\ny = x / (x - 3)\r\n```\r\n\r\nبالطريقة البيانية، أي الخوارزمية البيانية."
+        "body": "اكتب الخوارزمية اللازمة لحساب ناتج:\r\n\r\n```cpp\r\ny = x / (x - 3)\r\n```\r\n\r\nبالطريقة البيانية، أي الخوارزمية البيانية.",
+        "answer": {
+          "verdict": "الحل",
+          "flowchart": {
+            "type": "decision-process",
+            "nodes": [
+              { "type": "start", "label": "بداية" },
+              { "type": "input", "label": "اقرأ x" },
+              { "type": "decision", "label": "x != 3" },
+              { "type": "process", "label": "y = x / (x - 3)" },
+              { "type": "output", "label": "اطبع y" },
+              { "type": "output", "label": "لا يمكن الحساب" },
+              { "type": "end", "label": "نهاية" }
+            ]
+          }
+        }
       },
       {
         "id": "flowchart-3",
         "number": 3,
-        "body": "اكتب بالطريقة البيانية الخوارزمية اللازمة لإدخال عدد صحيح `y`، ثم طباعة ناتج العملية:\r\n\r\n```cpp\r\n1 / (y - 7)\r\n```"
+        "body": "اكتب بالطريقة البيانية الخوارزمية اللازمة لإدخال عدد صحيح `y`، ثم طباعة ناتج العملية:\r\n\r\n```cpp\r\n1 / (y - 7)\r\n```",
+        "answer": {
+          "verdict": "الحل",
+          "flowchart": {
+            "type": "decision",
+            "nodes": [
+              { "type": "start", "label": "بداية" },
+              { "type": "input", "label": "اقرأ y" },
+              { "type": "decision", "label": "y != 7" },
+              { "type": "output", "label": "اطبع 1 / (y - 7)" },
+              { "type": "output", "label": "لا يمكن الحساب" },
+              { "type": "end", "label": "نهاية" }
+            ]
+          }
+        }
       },
       {
         "id": "flowchart-4",
         "number": 4,
-        "body": "اكتب بالطريقة البيانية الخوارزمية اللازمة لقراءة علامة طالب `mark`، فإذا كانت العلامة ناجحة يطبع العبارة `passed`، وإذا كانت راسبة يطبع العبارة `failed`."
+        "body": "اكتب بالطريقة البيانية الخوارزمية اللازمة لقراءة علامة طالب `mark`، فإذا كانت العلامة ناجحة يطبع العبارة `passed`، وإذا كانت راسبة يطبع العبارة `failed`.",
+        "answer": {
+          "verdict": "الحل",
+          "flowchart": {
+            "type": "decision",
+            "nodes": [
+              { "type": "start", "label": "بداية" },
+              { "type": "input", "label": "اقرأ mark" },
+              { "type": "decision", "label": "mark >= 60" },
+              { "type": "output", "label": "اطبع passed" },
+              { "type": "output", "label": "اطبع failed" },
+              { "type": "end", "label": "نهاية" }
+            ]
+          }
+        }
       },
       {
         "id": "flowchart-5",
         "number": 5,
-        "body": "اكتب الخوارزمية اللازمة لحساب:\r\n\r\n```cpp\r\ny = x / (x - 3)\r\n```\r\n\r\nبالطريقة البيانية، أي الخوارزمية البيانية."
+        "body": "اكتب الخوارزمية اللازمة لحساب:\r\n\r\n```cpp\r\ny = x / (x - 3)\r\n```\r\n\r\nبالطريقة البيانية، أي الخوارزمية البيانية.",
+        "answer": {
+          "verdict": "الحل",
+          "flowchart": {
+            "type": "decision-process",
+            "nodes": [
+              { "type": "start", "label": "بداية" },
+              { "type": "input", "label": "اقرأ x" },
+              { "type": "decision", "label": "x != 3" },
+              { "type": "process", "label": "y = x / (x - 3)" },
+              { "type": "output", "label": "اطبع y" },
+              { "type": "output", "label": "لا يمكن الحساب" },
+              { "type": "end", "label": "نهاية" }
+            ]
+          }
+        }
       },
       {
         "id": "flowchart-6",
         "number": 6,
-        "body": "اكتب بالطريقة البيانية الخوارزمية المناسبة لقراءة علامة طالب `mark`، في مادة، وطباعة العبارة `passed` إذا كان ناجحًا، وطباعة العبارة `failed` إذا كان راسبًا.\r\nشرط النجاح هو الحصول على العلامة `60` أو أكثر."
+        "body": "اكتب بالطريقة البيانية الخوارزمية المناسبة لقراءة علامة طالب `mark`، في مادة، وطباعة العبارة `passed` إذا كان ناجحًا، وطباعة العبارة `failed` إذا كان راسبًا.\r\nشرط النجاح هو الحصول على العلامة `60` أو أكثر.",
+        "answer": {
+          "verdict": "الحل",
+          "flowchart": {
+            "type": "decision",
+            "nodes": [
+              { "type": "start", "label": "بداية" },
+              { "type": "input", "label": "اقرأ mark" },
+              { "type": "decision", "label": "mark >= 60" },
+              { "type": "output", "label": "اطبع passed" },
+              { "type": "output", "label": "اطبع failed" },
+              { "type": "end", "label": "نهاية" }
+            ]
+          }
+        }
       },
       {
         "id": "flowchart-7",
         "number": 7,
-        "body": "اكتب بالطريقة البيانية، أي الخوارزمية البيانية، الخوارزمية اللازمة لإدخال عدد صحيح `x` وطباعة العبارة `Positive` إذا كان هذا العدد موجبًا، والعبارة `Negative` إذا كان سالبًا."
+        "body": "اكتب بالطريقة البيانية، أي الخوارزمية البيانية، الخوارزمية اللازمة لإدخال عدد صحيح `x` وطباعة العبارة `Positive` إذا كان هذا العدد موجبًا، والعبارة `Negative` إذا كان سالبًا.",
+        "answer": {
+          "verdict": "الحل",
+          "flowchart": {
+            "type": "decision",
+            "nodes": [
+              { "type": "start", "label": "بداية" },
+              { "type": "input", "label": "اقرأ x" },
+              { "type": "decision", "label": "x > 0" },
+              { "type": "output", "label": "اطبع Positive" },
+              { "type": "output", "label": "اطبع Negative" },
+              { "type": "end", "label": "نهاية" }
+            ]
+          }
+        }
       },
       {
         "id": "flowchart-8",
         "number": 8,
-        "body": "اكتبي الخوارزمية النصية والخوارزمية البيانية لحساب محيط ومساحة مربع، طول ضلعه `x`."
+        "body": "اكتبي الخوارزمية النصية والخوارزمية البيانية لحساب محيط ومساحة مربع، طول ضلعه `x`.",
+        "answer": {
+          "verdict": "الحل",
+          "algorithm": [
+            "ابدأ.",
+            "اقرأ `x`.",
+            "احسب `perimeter = 4 * x`.",
+            "احسب `area = x * x`.",
+            "اطبع `perimeter` و`area`.",
+            "انتهِ."
+          ],
+          "flowchart": {
+            "type": "linear",
+            "nodes": [
+              { "type": "start", "label": "بداية" },
+              { "type": "input", "label": "اقرأ x" },
+              { "type": "process", "label": "perimeter = 4 * x" },
+              { "type": "process", "label": "area = x * x" },
+              { "type": "output", "label": "اطبع perimeter, area" },
+              { "type": "end", "label": "نهاية" }
+            ]
+          }
+        }
       },
       {
         "id": "flowchart-9",
         "number": 9,
-        "body": "اكتب الخوارزمية النصية والخوارزمية البيانية لإدخال `x`، وإيجاد قيمة:\r\n\r\n```cpp\r\ny = x / (x - 7)\r\n```"
+        "body": "اكتب الخوارزمية النصية والخوارزمية البيانية لإدخال `x`، وإيجاد قيمة:\r\n\r\n```cpp\r\ny = x / (x - 7)\r\n```",
+        "answer": {
+          "verdict": "الحل",
+          "algorithm": [
+            "ابدأ.",
+            "اقرأ `x`.",
+            "إذا كان `x != 7` احسب `y = x / (x - 7)` ثم اطبع `y`، وإلا اطبع `لا يمكن الحساب`.",
+            "انتهِ."
+          ],
+          "flowchart": {
+            "type": "decision-process",
+            "nodes": [
+              { "type": "start", "label": "بداية" },
+              { "type": "input", "label": "اقرأ x" },
+              { "type": "decision", "label": "x != 7" },
+              { "type": "process", "label": "y = x / (x - 7)" },
+              { "type": "output", "label": "اطبع y" },
+              { "type": "output", "label": "لا يمكن الحساب" },
+              { "type": "end", "label": "نهاية" }
+            ]
+          }
+        }
       }
     ]
   },
