@@ -81,7 +81,7 @@ button { color: inherit; }
   direction: ltr;
 }
 
-.brand strong, .brand span { display: block; }
+.brand strong, .brand div > span { display: block; }
 .brand strong, .brand div > span {
   overflow: hidden;
   text-overflow: ellipsis;
