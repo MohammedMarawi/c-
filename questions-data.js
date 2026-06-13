@@ -172,7 +172,7 @@ const QUESTION_SECTIONS = [
         "body": "النمط `int` يتم حجزه في الذاكرة بالحجم `1 byte`.",
         "answer": {
           "verdict": "خطأ",
-          "correction": "حجم `int` يعتمد على النظام والمترجم، وغالبًا يكون `4 bytes`."
+          "correction": "حجم `int` هو `4 bytes`."
         }
       },
       {
