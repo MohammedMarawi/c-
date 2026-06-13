@@ -668,10 +668,10 @@ const QUESTION_SECTIONS = [
       {
         "id": "trace-code-8",
         "number": 8,
-        "body": "```cpp\nint x = 5, y = 3;\n\nif (x >= 2 && y > 5)\n    cout << \"val-\" << x * y;\nelse\n    cout << \"value -\" << x + y;\n```",
+        "body": "```cpp\nint x = 5, y = 3;\n\nif (x >= 2 && y > 5)\n    cout << \"val =\" << x * y;\nelse\n    cout << \"value =\" << x + y;\n```",
         "answer": {
           "verdict": "الناتج",
-          "correction": "```text\nvalue -8\n```"
+          "correction": "```text\nvalue =8\n```"
         }
       },
       {
