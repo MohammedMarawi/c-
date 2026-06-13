@@ -98,6 +98,23 @@ function renderMarkdown(markdown) {
       index += 1;
       continue;
     }
+    const errorLine = line.trim().match(/^الخطأ\s+(\d+):\s*(.*)$/);
+    if (errorLine) {
+      const parts = errorLine[2].split(/\s*←\s*/);
+      html.push(`
+        <div class="error-item">
+          <strong class="error-title">الخطأ ${errorLine[1]}</strong>
+          <div class="error-line">${inlineFormat(parts[0])}</div>
+          ${parts[1] ? `<div class="correction-line"><span>التصحيح</span>${inlineFormat(parts[1].replace(/^الصحيح:\s*/, ""))}</div>` : ""}
+        </div>`);
+      index += 1;
+      continue;
+    }
+    if (line.trim() === "البرنامج المصحح:") {
+      html.push('<h3 class="corrected-program-title">البرنامج المصحح</h3>');
+      index += 1;
+      continue;
+    }
     const choice = line.trim().match(/^([أبج])\.\s*(.*)$/);
     html.push(choice
       ? `<div class="choice-item"><span class="choice-marker">${choice[1]}</span><div>${inlineFormat(choice[2])}</div></div>`
