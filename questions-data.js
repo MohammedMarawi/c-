@@ -471,15 +471,6 @@ const QUESTION_SECTIONS = [
       {
         "id": "debug-code-4",
         "number": 4,
-        "body": "صحح الأخطاء الموجودة في البرنامج التالي، والذي يأخذ كدخل عددين صحيحين ثم يطبع مجموعهما وباقي قسمة الأول على الثاني.\r\n\r\n```cpp\r\n#include <iostream.h>\r\n\r\nmain()\r\n{\r\n    char x, y;\r\n\r\n    cin >> x >> y;\r\n\r\n    cin << x + y << \"\\n\"\r\n\r\n    cout << x / y << \"\\n\";\r\n\r\n    return 0;\r\n}\r\n```",
-        "answer": {
-          "verdict": "التصحيح",
-          "correction": "الخطأ 1: `char x, y;` ← الصحيح: `int x, y;`\n\nالخطأ 2: `cin << x + y << \"\\n\"` ← الصحيح: `cout << x + y << \"\\n\";`\n\nالخطأ 3: `x / y` ← الصحيح لحساب باقي القسمة: `x % y`.\n\nالبرنامج المصحح:\n\n```cpp\n#include <iostream.h>\n\nmain()\n{\n    [[fix]]int[[/fix]] x, y;\n\n    cin >> x >> y;\n\n    [[fix]]cout[[/fix]] << x + y << \"\\n\"[[fix]];[[/fix]]\n    cout << x [[fix]]%[[/fix]] y << \"\\n\";\n\n    return 0;\n}\n```"
-        }
-      },
-      {
-        "id": "debug-code-5",
-        "number": 5,
         "body": "صحح الأخطاء الموجودة في البرنامج التالي، والذي يقوم بقراءة نصف قطر دائرة ثم يطبع قيمة محيطها ومساحتها.\r\n\r\n```cpp\r\n#include <iostream.h>\r\n\r\nmain()\r\n{\r\n    bool r;\r\n\r\n    double s, m;\r\n\r\n    double p = 3.14;\r\n\r\n    cin >> r;\r\n\r\n    m = 2 * p * r;\r\n\r\n    s = p * r * r;\r\n\r\n    cin >> \"m = \" >> m >> \"\\n\";\r\n\r\n    cout << \"s = \" << s << \"\\n\";\r\n\r\n    return 0;\r\n}\r\n```",
         "answer": {
           "verdict": "التصحيح",
@@ -487,8 +478,8 @@ const QUESTION_SECTIONS = [
         }
       },
       {
-        "id": "debug-code-6",
-        "number": 6,
+        "id": "debug-code-5",
+        "number": 5,
         "body": "صحح الأخطاء الموجودة في البرنامج التالي، والذي يقوم بحساب مجموع الأعداد من `30` إلى `50`.\r\n\r\n```cpp\r\n#include <iostream.h>\r\n\r\nmain()\r\n{\r\n    char sum = 0;\r\n\r\n    while (i = 1; i++; i <= 20)\r\n    {\r\n        sum == sum + 0;\r\n    }\r\n\r\n    cin << \"sum is\" << i;\r\n\r\n    return 0;\r\n}\r\n```",
         "answer": {
           "verdict": "التصحيح",
@@ -496,8 +487,8 @@ const QUESTION_SECTIONS = [
         }
       },
       {
-        "id": "debug-code-7",
-        "number": 7,
+        "id": "debug-code-6",
+        "number": 6,
         "body": "صحح الأخطاء الموجودة في البرنامج التالي، والذي يقوم بقراءة مجموع `3` أعداد صحيحة ومتوسطها الحسابي.\r\n\r\n```cpp\r\ninclude <iostream.h>\r\n\r\nin()\r\n{\r\n    float x1, x2, x3;\r\n\r\n    cout >> x1 >> x2 >> x3;\r\n\r\n    cin << x1 + x2 + x3\r\n\r\n    cout < x1 + x2 + x3 / 3;\r\n\r\n    return 0;\r\n}\r\n```",
         "answer": {
           "verdict": "التصحيح",
@@ -505,8 +496,8 @@ const QUESTION_SECTIONS = [
         }
       },
       {
-        "id": "debug-code-8",
-        "number": 8,
+        "id": "debug-code-7",
+        "number": 7,
         "body": "صحح الأخطاء الموجودة في البرنامج التالي، والذي يقوم بحساب مجموع الأعداد الزوجية ضمن المجال من `1` إلى `30`.\r\n\r\n```cpp\r\n#include <math.h>\r\n\r\nmain()\r\n{\r\n    int sum = 1;\r\n\r\n    for (int i = 1; i <= 10; i++)\r\n    {\r\n        if (i / 2 == 0)\r\n            sum = sum + 1;\r\n    }\r\n\r\n    cout << \"sum is :\" << i;\r\n\r\n    return 0;\r\n}\r\n```",
         "answer": {
           "verdict": "التصحيح",
@@ -514,8 +505,8 @@ const QUESTION_SECTIONS = [
         }
       },
       {
-        "id": "debug-code-9",
-        "number": 9,
+        "id": "debug-code-8",
+        "number": 8,
         "body": "صحح الأخطاء الموجودة في البرنامج التالي، والذي يقوم بحساب مجموع الأعداد الزوجية الموجودة في المجال من `0` إلى `30`.\r\n\r\n```cpp\r\n#include <iostream.h>\r\n\r\nmain()\r\n{\r\n    char sum = 0;\r\n\r\n    for (i = 1; i <= 15; i--)\r\n    {\r\n        if (i / 2 = 0)\r\n            sum = sum + 1;\r\n    }\r\n\r\n    cin << \"sum is : \" << i;\r\n\r\n    return 0;\r\n}\r\n```",
         "answer": {
           "verdict": "التصحيح",
@@ -523,8 +514,8 @@ const QUESTION_SECTIONS = [
         }
       },
       {
-        "id": "debug-code-10",
-        "number": 10,
+        "id": "debug-code-9",
+        "number": 9,
         "body": "صحح الأخطاء الموجودة في البرنامج التالي، والذي يقوم بحساب المتوسط الحسابي للأعداد الموجودة في المجال من `1` إلى `10`.\r\n\r\n```cpp\r\n#include <iostream.h>\r\n\r\nmain()\r\n{\r\n    int sum = 1;\r\n\r\n    for (int i = 1; i <= 10; i--)\r\n    {\r\n        sum = sum + 1;\r\n    }\r\n\r\n    cout << \"avg = \" << i;\r\n\r\n    return 0;\r\n}\r\n```",
         "answer": {
           "verdict": "التصحيح",
@@ -532,8 +523,8 @@ const QUESTION_SECTIONS = [
         }
       },
       {
-        "id": "debug-code-11",
-        "number": 11,
+        "id": "debug-code-10",
+        "number": 10,
         "body": "صحح الأخطاء الموجودة في البرنامج التالي، والذي يقوم بقراءة نصف قطر دائرة، ثم يطبع قيمة قطرها ومحيطها ومساحتها.\r\n\r\n```cpp\r\n#include <iostream.h>\r\n\r\nmain()\r\n{\r\n    bool r;\r\n\r\n    float p = 3.14;\r\n\r\n    cin >> r\r\n\r\n    cin << r * 2 << \"\\n\";\r\n\r\n    cout << 2 * p * R << \"\\n\";\r\n\r\n    cout << p * r * r << \"\\n\";\r\n\r\n    return 0;\r\n}\r\n```",
         "answer": {
           "verdict": "التصحيح",
