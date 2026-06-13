@@ -474,7 +474,7 @@ const QUESTION_SECTIONS = [
         "body": "صحح الأخطاء الموجودة في البرنامج التالي، والذي يقوم بقراءة نصف قطر دائرة ثم يطبع قيمة محيطها ومساحتها.\r\n\r\n```cpp\r\n#include <iostream.h>\r\n\r\nmain()\r\n{\r\n    bool r;\r\n\r\n    double s, m;\r\n\r\n    double p = 3.14;\r\n\r\n    cin >> r;\r\n\r\n    m = 2 * p * r;\r\n\r\n    s = p * r * r;\r\n\r\n    cin >> \"m = \" >> m >> \"\\n\";\r\n\r\n    cout << \"s = \" << s << \"\\n\";\r\n\r\n    return 0;\r\n}\r\n```",
         "answer": {
           "verdict": "التصحيح",
-          "correction": "الخطأ 1: `bool r;` ← الصحيح: `double r;`\n\nالخطأ 2: `cin >> \"m = \" >> m >> \"\\n\";` ← الصحيح للطباعة: `cout << \"m = \" << m << \"\\n\";`.\n\nالبرنامج المصحح:\n\n```cpp\n#include <iostream.h>\n\nmain()\n{\n    [[fix]]double[[/fix]] r;\n\n    double s, m;\n\n    double p = 3.14;\n\n    cin >> r;\n\n    m = 2 * p * r;\n    s = p * r * r;\n\n    [[fix]]cout[[/fix]] [[fix]]<<[[/fix]] \"m = \" [[fix]]<<[[/fix]] m [[fix]]<<[[/fix]] \"\\n\";\n    cout << \"s = \" << s << \"\\n\";\n\n    return 0;\n}\n```"
+          "correction": "الخطأ 1: `bool r;` ← الصحيح: `double r;`\n\nالخطأ 2: `double p = 3.14;` ← الصحيح: `const double p = 3.14;`\n\nالخطأ 3: `cin >> \"m = \" >> m >> \"\\n\";` ← الصحيح للطباعة: `cout << \"m = \" << m << \"\\n\";`.\n\nالبرنامج المصحح:\n\n```cpp\n#include <iostream.h>\n\nmain()\n{\n    [[fix]]double[[/fix]] r;\n\n    double s, m;\n\n    [[fix]]const[[/fix]] double p = 3.14;\n\n    cin >> r;\n\n    m = 2 * p * r;\n    s = p * r * r;\n\n    [[fix]]cout[[/fix]] [[fix]]<<[[/fix]] \"m = \" [[fix]]<<[[/fix]] m [[fix]]<<[[/fix]] \"\\n\";\n    cout << \"s = \" << s << \"\\n\";\n\n    return 0;\n}\n```"
         }
       },
       {
@@ -501,7 +501,7 @@ const QUESTION_SECTIONS = [
         "body": "صحح الأخطاء الموجودة في البرنامج التالي، والذي يقوم بقراءة نصف قطر دائرة، ثم يطبع قيمة قطرها ومحيطها ومساحتها.\r\n\r\n```cpp\r\n#include <iostream.h>\r\n\r\nmain()\r\n{\r\n    bool r;\r\n\r\n    float p = 3.14;\r\n\r\n    cin >> r\r\n\r\n    cin << r * 2 << \"\\n\";\r\n\r\n    cout << 2 * p * R << \"\\n\";\r\n\r\n    cout << p * r * r << \"\\n\";\r\n\r\n    return 0;\r\n}\r\n```",
         "answer": {
           "verdict": "التصحيح",
-          "correction": "الخطأ 1: `bool r;` ← الصحيح: `float r;`\n\nالخطأ 2: ينقص الفاصل المنقوط بعد `cin >> r`.\n\nالخطأ 3: `cin << r * 2` ← الصحيح للطباعة: `cout << r * 2`.\n\nالخطأ 4: استخدام `R` خطأ لأن اللغة حساسة لحالة الأحرف؛ الصحيح `r`.\n\nالبرنامج المصحح:\n\n```cpp\n#include <iostream.h>\n\nmain()\n{\n    [[fix]]float[[/fix]] r;\n\n    float p = 3.14;\n\n    cin >> r[[fix]];[[/fix]]\n\n    [[fix]]cout[[/fix]] << r * 2 << \"\\n\";\n\n    cout << 2 * p * [[fix]]r[[/fix]] << \"\\n\";\n\n    cout << p * r * r << \"\\n\";\n\n    return 0;\n}\n```"
+          "correction": "الخطأ 1: `bool r;` ← الصحيح: `float r;`\n\nالخطأ 2: `float p = 3.14;` ← الصحيح: `const float p = 3.14;`\n\nالخطأ 3: ينقص الفاصل المنقوط بعد `cin >> r`.\n\nالخطأ 4: `cin << r * 2` ← الصحيح للطباعة: `cout << r * 2`.\n\nالخطأ 5: استخدام `R` خطأ لأن اللغة حساسة لحالة الأحرف؛ الصحيح `r`.\n\nالبرنامج المصحح:\n\n```cpp\n#include <iostream.h>\n\nmain()\n{\n    [[fix]]float[[/fix]] r;\n\n    [[fix]]const[[/fix]] float p = 3.14;\n\n    cin >> r[[fix]];[[/fix]]\n\n    [[fix]]cout[[/fix]] << r * 2 << \"\\n\";\n\n    cout << 2 * p * [[fix]]r[[/fix]] << \"\\n\";\n\n    cout << p * r * r << \"\\n\";\n\n    return 0;\n}\n```"
         }
       },
       {
