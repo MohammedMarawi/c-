@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#090b10">
+  <title>مراجعة البرمجة</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <button class="icon-button is-hidden" id="backButton" type="button" aria-label="العودة إلى الأقسام" title="العودة إلى الأقسام">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+    </button>
+    <div class="brand">
+      <span class="brand-mark">C++</span>
+      <div>
+        <strong>مراجعة البرمجة</strong>
+        <span id="headerSubtitle">اختر قسمًا للبدء</span>
+      </div>
+    </div>
+    <button class="icon-button is-hidden" id="homeButton" type="button" aria-label="الأقسام" title="الأقسام">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg>
+    </button>
+  </header>
+
+  <main>
+    <section id="homeView" class="view">
+      <div class="intro">
+        <p class="eyebrow">بنك أسئلة C++</p>
+        <h1>اختر نوع الأسئلة</h1>
+        <p>ستة أقسام مرتبة للمراجعة على الهاتف، مع حفظ تقدمك تلقائيًا.</p>
+        <div class="overall-progress">
+          <div>
+            <span>التقدم الكلي</span>
+            <strong id="overallProgressText">0 من 106</strong>
+          </div>
+          <div class="progress-track"><span id="overallProgressBar"></span></div>
+        </div>
+      </div>
+      <nav id="categoryList" class="category-list" aria-label="أقسام الأسئلة"></nav>
+    </section>
+
+    <section id="sectionView" class="view is-hidden">
+      <div class="section-tools">
+        <div class="section-heading">
+          <p class="eyebrow" id="sectionKicker"></p>
+          <h1 id="sectionTitle"></h1>
+          <p id="sectionMeta"></p>
+        </div>
+        <label class="search">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+          <input id="searchInput" type="search" placeholder="ابحث داخل هذا القسم" autocomplete="off">
+        </label>
+      </div>
+      <div id="questionList" class="question-list"></div>
+      <p id="emptyState" class="empty-state is-hidden">لا توجد أسئلة مطابقة لبحثك.</p>
+    </section>
+  </main>
+
+  <button id="scrollTopButton" class="scroll-top is-hidden" type="button" aria-label="العودة إلى الأعلى" title="العودة إلى الأعلى">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+
+  <script src="questions-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
