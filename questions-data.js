@@ -359,7 +359,7 @@ const QUESTION_SECTIONS = [
         "body": "التصريح عن متحول من نوع عدد عشري يكون بالشكل:\n\n   أ.\n\n   ```cpp\n   int x = 5.7;\n   ```\n\n   ب.\n\n   ```cpp\n   int x = 5;\n   ```\n\n   ج.\n\n   ```cpp\n   float x = 5.7;\n   ```",
         "answer": {
           "verdict": "ج",
-          "correction": "float x = 5.7;"
+          "correction": "`float x = 5.7;`"
         }
       },
       {
@@ -377,7 +377,7 @@ const QUESTION_SECTIONS = [
         "body": "التعليمة التي تؤدي إلى تنفيذ مجموعة من التعليمات عددًا محددًا من المرات هي:\n\n   أ. `for`\n   ب. `while`\n   ج. `cin`",
         "answer": {
           "verdict": "أ",
-          "correction": "for"
+          "correction": "`for`"
         }
       },
       {
@@ -386,7 +386,7 @@ const QUESTION_SECTIONS = [
         "body": "تعليمة الطباعة على الشاشة هي:\n\n   أ. `print`\n   ب. `cin`\n   ج. `cout`",
         "answer": {
           "verdict": "ج",
-          "correction": "cout"
+          "correction": "`cout`"
         }
       },
       {
@@ -395,7 +395,7 @@ const QUESTION_SECTIONS = [
         "body": "بفرض:\n\n   ```cpp\n   x = 11\n   y = 3\n   z = x % y\n   ```\n\n   فإن قيمة `z` هي:\n\n   أ. `1`\n   ب. `2.5`\n   ج. `2`",
         "answer": {
           "verdict": "ج",
-          "correction": "2"
+          "correction": "`2`"
         }
       },
       {
@@ -404,7 +404,7 @@ const QUESTION_SECTIONS = [
         "body": "التصريح عن متحول من نوع عدد عشري يكون بالشكل:\n\n   أ.\n\n   ```cpp\n   int y = 5.7;\n   ```\n\n   ب.\n\n   ```cpp\n   int y = 5;\n   ```\n\n   ج.\n\n   ```cpp\n   float y = 5.7;\n   ```",
         "answer": {
           "verdict": "ج",
-          "correction": "float y = 5.7;"
+          "correction": "`float y = 5.7;`"
         }
       },
       {
@@ -413,7 +413,7 @@ const QUESTION_SECTIONS = [
         "body": "ناتج تنفيذ العملية الحسابية التالية:\n\n   ```cpp\n   5 + 2 * 6 - 6 % 2\n   ```\n\n   أ. `39`\n   ب. `4`\n   ج. `17`",
         "answer": {
           "verdict": "ج",
-          "correction": "17"
+          "correction": "`17`"
         }
       },
       {
@@ -422,7 +422,7 @@ const QUESTION_SECTIONS = [
         "body": "التعليمة التي تؤدي إلى تنفيذ مجموعة من التعليمات عند تحقق شرط معين:\n\n   أ. `main`\n   ب. `cin`\n   ج. `if`",
         "answer": {
           "verdict": "ج",
-          "correction": "if"
+          "correction": "`if`"
         }
       },
       {
