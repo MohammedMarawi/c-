@@ -542,15 +542,6 @@ const QUESTION_SECTIONS = [
       {
         "id": "write-program-5",
         "number": 5,
-        "body": "اكتب برنامجًا يطلب من المستخدم إدخال `10` أعداد صحيحة، ثم يقوم بحساب ناتج جمع هذه الأعداد، فإذا كان الناتج أكبر تمامًا من `200` يطبع العبارة `Between 100 and 200`، وإذا كان يساوي `500` يطبع العبارة `Equal 500`، وإذا كان غير ذلك يطبع العبارة `Try again`.",
-        "answer": {
-          "verdict": "الحل",
-          "correction": "```cpp\n#include <iostream>\nusing namespace std;\n\nint main()\n{\n    int number, sum = 0, i;\n\n    for (i = 0; i < 10; i++)\n    {\n        cin >> number;\n        sum += number;\n    }\n\n    if (sum == 500)\n        cout << \"Equal 500\";\n    else if (sum > 200)\n        cout << \"Between 100 and 200\";\n    else\n        cout << \"Try again\";\n\n    return 0;\n}\n```"
-        }
-      },
-      {
-        "id": "write-program-6",
-        "number": 6,
         "body": "اكتب برنامجًا لإدخال عددين صحيحين وحساب ناتج ضربهما، فإذا كان ناتج الضرب عددًا زوجيًا تتم طباعة العبارة `even value` على الشاشة، وإلا تتم طباعة العبارة `odd value` على الشاشة.",
         "answer": {
           "verdict": "الحل",
@@ -558,8 +549,8 @@ const QUESTION_SECTIONS = [
         }
       },
       {
-        "id": "write-program-7",
-        "number": 7,
+        "id": "write-program-6",
+        "number": 6,
         "body": "اكتب برنامجًا يطلب من المستخدم إدخال أسعار `5` مواد غذائية، ثم يقوم بحساب مجموع ومتوسط أسعار هذه المواد.",
         "answer": {
           "verdict": "الحل",
@@ -567,8 +558,8 @@ const QUESTION_SECTIONS = [
         }
       },
       {
-        "id": "write-program-8",
-        "number": 8,
+        "id": "write-program-7",
+        "number": 7,
         "body": "اكتب برنامجًا يطلب من المستخدم إدخال `10` أعداد صحيحة، ثم يقوم بحساب ناتج جمع هذه الأعداد، فإذا كان الناتج أكبر من `100` وأصغر تمامًا من `200` يطبع العبارة `Between 100 and 200`، وإذا كان يساوي `500` يطبع العبارة `Equal 500`، وإذا كان غير ذلك يطبع العبارة `Try again`.",
         "answer": {
           "verdict": "الحل",
