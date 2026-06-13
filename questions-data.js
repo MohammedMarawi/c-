@@ -651,26 +651,6 @@ const QUESTION_SECTIONS = [
       {
         "id": "flowchart-4",
         "number": 4,
-        "body": "اكتب الخوارزمية البيانية اللازمة لحساب:\r\n\r\n```cpp\r\ny = x / (x - 3)\r\n```",
-        "answer": {
-          "verdict": "الحل",
-          "flowchart": {
-            "type": "decision-process",
-            "nodes": [
-              { "type": "start", "label": "بداية" },
-              { "type": "input", "label": "اقرأ x" },
-              { "type": "decision", "label": "x != 3" },
-              { "type": "process", "label": "y = x / (x - 3)" },
-              { "type": "output", "label": "اطبع y" },
-              { "type": "output", "label": "لا يمكن الحساب" },
-              { "type": "end", "label": "نهاية" }
-            ]
-          }
-        }
-      },
-      {
-        "id": "flowchart-5",
-        "number": 5,
         "body": "اكتب الخوارزمية البيانية المناسبة لقراءة علامة طالب `mark` في مادة، وطباعة العبارة `passed` إذا كان ناجحًا، وطباعة العبارة `failed` إذا كان راسبًا.\r\nشرط النجاح هو الحصول على العلامة `60` أو أكثر.",
         "answer": {
           "verdict": "الحل",
@@ -688,37 +668,16 @@ const QUESTION_SECTIONS = [
         }
       },
       {
-        "id": "flowchart-6",
-        "number": 6,
-        "body": "اكتب الخوارزمية البيانية اللازمة لإدخال عدد صحيح `x` وطباعة العبارة `Positive` إذا كان هذا العدد موجبًا، والعبارة `Negative` إذا كان سالبًا.",
-        "answer": {
-          "verdict": "الحل",
-          "flowchart": {
-            "type": "decision",
-            "nodes": [
-              { "type": "start", "label": "بداية" },
-              { "type": "input", "label": "اقرأ x" },
-              { "type": "decision", "label": "x > 0" },
-              { "type": "output", "label": "اطبع Positive" },
-              { "type": "output", "label": "اطبع Negative" },
-              { "type": "end", "label": "نهاية" }
-            ]
-          }
-        }
-      },
-      {
-        "id": "flowchart-7",
-        "number": 7,
+        "id": "flowchart-5",
+        "number": 5,
         "body": "اكتب الخوارزمية النصية والبيانية لحساب محيط ومساحة مربع طول ضلعه `x`.",
         "answer": {
           "verdict": "الحل",
           "algorithm": [
-            "ابدأ.",
-            "اقرأ `x`.",
-            "احسب `perimeter = 4 * x`.",
-            "احسب `area = x * x`.",
-            "اطبع `perimeter` و`area`.",
-            "انتهِ."
+            "أدخل x",
+            "perimeter = 4 * x",
+            "area = x * x",
+            "اطبع perimeter , area"
           ],
           "flowchart": {
             "type": "linear",
@@ -734,16 +693,15 @@ const QUESTION_SECTIONS = [
         }
       },
       {
-        "id": "flowchart-8",
-        "number": 8,
+        "id": "flowchart-6",
+        "number": 6,
         "body": "اكتب الخوارزمية النصية والبيانية لإدخال `x` وإيجاد قيمة:\r\n\r\n```cpp\r\ny = x / (x - 7)\r\n```",
         "answer": {
           "verdict": "الحل",
           "algorithm": [
-            "ابدأ.",
-            "اقرأ `x`.",
-            "إذا كان `x != 7` احسب `y = x / (x - 7)` ثم اطبع `y`، وإلا اطبع `لا يمكن الحساب`.",
-            "انتهِ."
+            "أدخل x",
+            "إذا ( x != 7 ) نفذ y = x / ( x - 7 ) واطبع y",
+            "لايمكن الحساب' والا اطبع'"
           ],
           "flowchart": {
             "type": "decision-process",

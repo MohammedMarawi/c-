@@ -463,8 +463,9 @@ pre {
 
 .algorithm-block ol {
   margin: 0;
-  padding-right: 22px;
+  padding-inline-start: 22px;
   line-height: 2;
+  text-align: left;
 }
 
 .algorithm-block li::marker {

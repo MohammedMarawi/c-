@@ -239,7 +239,7 @@ function renderAlgorithm(steps) {
   return `
     <div class="algorithm-block">
       <h3>الخوارزمية النصية</h3>
-      <ol>${steps.map((step) => `<li>${inlineFormat(step)}</li>`).join("")}</ol>
+      <ol dir="ltr">${steps.map((step) => `<li>${inlineFormat(step)}</li>`).join("")}</ol>
     </div>`;
 }
 

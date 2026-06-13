@@ -1,0 +1,423 @@
+**نتيجة تنفيذ المقاطع البرمجية**
+
+اكتب نتيجة تنفيذ كل مقطع برمجي مما يلي:
+
+1.
+
+```cpp
+int z = 8;
+int y = 6;
+
+if (z <= 10 && y > 5)
+    cout << "values are between 5 and 10";
+else
+    cout << "wrong value";
+```
+
+---
+
+2.
+
+```cpp
+for (int i = 1; i <= 10; i++)
+{
+    if (i % 2 == 0)
+        cout << i << "\n";
+}
+```
+
+---
+
+3.
+
+```cpp
+int s = 5;
+
+s = s + 2 * 3 - 11;
+
+cout << "value is: " << s;
+```
+
+---
+
+4.
+
+```cpp
+int x = 9;
+
+cout << x++ << "\n";
+
+cout << x;
+```
+
+---
+
+5.
+
+```cpp
+for (int i = 1; i <= 5; i++)
+    cout << i << endl;
+```
+
+---
+
+6.
+
+```cpp
+for (int i = 5; i >= 0; i--)
+{
+    if (i % 2 == 0)
+        cout << i << "\n";
+}
+```
+
+---
+
+7.
+
+```cpp
+int n = 3, d = 2000;
+
+switch (n)
+{
+    case 0:
+        cout << d;
+        break;
+
+    case 1:
+        cout << d + 100;
+        break;
+
+    default:
+        cout << d + 100 + (n - 2) * 500;
+        break;
+}
+```
+
+---
+
+8.
+
+```cpp
+int x = 5, y = 3;
+
+if (x >= 2 && y > 5)
+    cout << "val =" << x * y;
+else
+    cout << "value =" << x + y;
+```
+
+---
+
+9.
+
+```cpp
+int a = 10;
+
+cout << a-- << "\t";
+
+cout << a;
+```
+
+---
+
+10.
+
+```cpp
+int i = 1, x = 0;
+
+while (i <= 10)
+{
+    x = x + i;
+    i++;
+}
+
+cout << "Sum = " << x;
+```
+
+---
+
+11.
+
+```cpp
+int x = 10, y = 8, z;
+
+z = x + y;
+
+cout << "x + y = \t" << z;
+```
+
+---
+
+12.
+
+```cpp
+int a = 13;
+
+cout << a << endl;
+
+cout << ++a << endl;
+
+cout << a << endl;
+```
+
+---
+
+13.
+
+```cpp
+int a = 4, b;
+
+b = a - 10 / 2;
+
+cout << b << "\n";
+
+if (b >= 0)
+    cout << "postitive" << "\n";
+else
+    cout << "Negative" << "\n";
+```
+
+---
+
+14.
+
+```cpp
+int z = 8;
+
+cout << z << "\n";
+
+cout << z-- << "\n";
+
+cout << z << "\n";
+```
+
+---
+
+15.
+
+```cpp
+int x = 4, y = 11;
+
+if (x % 2 == 0 && y > 10)
+    cout << "value is " << x + y;
+else
+    cout << "The Val = " << x * y;
+```
+
+---
+
+16.
+
+```cpp
+for (int i = 10; i < 15; i++)
+{
+    if (i == 13)
+        break;
+
+    cout << i << endl;
+}
+```
+
+---
+
+17.
+
+```cpp
+for (int i = 6; i > 1; i--)
+{
+    if (i % 2 != 0)
+        continue;
+
+    cout << i << "\t" << i * i << endl;
+}
+```
+
+---
+
+18.
+
+```cpp
+int num = 10;
+
+cout << num++ << "\n";
+
+cout << num;
+```
+
+---
+
+19.
+
+```cpp
+int z = 5, y = 10;
+
+if (z <= 8 && y < 5)
+    cout << "values are between 0 and 10";
+else
+    cout << "wrong value";
+```
+
+---
+
+20.
+
+```cpp
+int s = 3;
+
+s = s + 2 * 3 - 9;
+
+cout << "value is: " << s;
+```
+
+---
+
+21.
+
+```cpp
+int y = 8;
+
+cout << --y << "\n";
+
+cout << y;
+```
+
+---
+
+22.
+
+```cpp
+int x = 11;
+
+cout << x++ << "\n";
+
+cout << x;
+```
+
+---
+
+23.
+
+```cpp
+int s = 16, m = 2;
+
+if (s >= 4 && m > 10)
+    cout << "result =" << pow(m, 5);
+else
+    cout << "result =" << pow(m, 3);
+```
+
+---
+
+24.
+
+```cpp
+for (int i = 1; i <= 20; i++)
+{
+    if (i % 2 != 0)
+        continue;
+
+    cout << i << "\n";
+}
+```
+
+---
+
+25.
+
+```cpp
+int i = 1;
+
+while (i <= 5)
+{
+    cout << i << "\t";
+
+    i++;
+}
+```
+
+---
+
+26.
+
+```cpp
+int z = 20;
+
+cout << z-- << "\n";
+
+cout << z << "\n";
+```
+
+---
+
+27.
+
+```cpp
+int n = 4, d;
+
+d = 6 + n / 2;
+
+switch (d)
+{
+    case 5:
+        cout << d * 10;
+        break;
+
+    case 8:
+        cout << d * 100;
+        break;
+
+    default:
+        cout << "Error";
+        break;
+}
+```
+
+---
+
+28.
+
+```cpp
+for (int i = 5; i <= 10; i++)
+{
+    if (i == 7)
+        break;
+
+    cout << i << endl;
+}
+```
+
+---
+
+29.
+
+```cpp
+int a = 10, b;
+
+b = a + 8 / 2;
+
+cout << b << "\n";
+
+if (b <= 9)
+    cout << "values are between 0 and 15";
+else
+    cout << "values more than 15";
+```
+
+---
+
+30.
+
+```cpp
+int z = 10;
+
+cout << --z << "\n";
+
+cout << z;
+
+int y = 20;
+
+cout << y << "\n";
+
+cout << y;
+```
