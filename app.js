@@ -90,6 +90,14 @@ function renderQuestionList(section) {
         <strong>السؤال ${item.number}</strong>
       </header>
       <div class="question-body">${renderMarkdown(item.body)}</div>
+      ${item.answer ? `
+        <details class="answer-box">
+          <summary>عرض الإجابة</summary>
+          <div class="answer-content">
+            <strong class="${item.answer.verdict === "صح" ? "is-true" : "is-false"}">${item.answer.verdict}</strong>
+            ${item.answer.correction ? `<div>${renderMarkdown(item.answer.correction)}</div>` : ""}
+          </div>
+        </details>` : ""}
     </article>
   `).join("");
 }
