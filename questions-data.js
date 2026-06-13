@@ -684,8 +684,7 @@ const QUESTION_SECTIONS = [
             "nodes": [
               { "type": "start", "label": "بداية" },
               { "type": "input", "label": "اقرأ x" },
-              { "type": "process", "label": "perimeter = 4 * x" },
-              { "type": "process", "label": "area = x * x" },
+              { "type": "process", "label": "perimeter = 4 * x\narea = x * x" },
               { "type": "output", "label": "اطبع perimeter, area" },
               { "type": "end", "label": "نهاية" }
             ]
