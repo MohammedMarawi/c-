@@ -563,7 +563,7 @@ const QUESTION_SECTIONS = [
         "body": "اكتب برنامجًا يطلب من المستخدم إدخال `10` أعداد صحيحة، ثم يقوم بحساب ناتج جمع هذه الأعداد، فإذا كان الناتج أكبر من `100` وأصغر تمامًا من `200` يطبع العبارة `Between 100 and 200`، وإذا كان يساوي `500` يطبع العبارة `Equal 500`، وإذا كان غير ذلك يطبع العبارة `Try again`.",
         "answer": {
           "verdict": "الحل",
-          "correction": "```cpp\n#include <iostream>\nusing namespace std;\n\nint main()\n{\n    int number, sum = 0, i;\n\n    for (i = 1; i <= 10; i++)\n    {\n        cin >> number;\n        sum += number;\n    }\n\n    if (sum == 500)\n        cout << \"Equal 500\";\n    else if (sum > 100 && sum < 200)\n        cout << \"Between 100 and 200\";\n    else\n        cout << \"Try again\";\n\n    return 0;\n}\n```"
+          "correction": "```cpp\n#include <iostream>\nusing namespace std;\n\nint main()\n{\n    int number, sum = 0, i;\n\n    for (i = 1; i <= 10; i++)\n    {\n        cin >> number;\n        sum += number;\n    }\n\n    if (sum > 100 && sum < 200)\n        cout << \"Between 100 and 200\";\n    else if (sum == 500)\n        cout << \"Equal 500\";\n    else\n        cout << \"Try again\";\n\n    return 0;\n}\n```"
         }
       }
     ]
