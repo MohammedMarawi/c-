@@ -651,25 +651,6 @@ const QUESTION_SECTIONS = [
       {
         "id": "flowchart-4",
         "number": 4,
-        "body": "اكتب الخوارزمية البيانية اللازمة لقراءة علامة طالب `mark`، فإذا كانت العلامة ناجحة يطبع العبارة `passed`، وإذا كانت راسبة يطبع العبارة `failed`.",
-        "answer": {
-          "verdict": "الحل",
-          "flowchart": {
-            "type": "decision",
-            "nodes": [
-              { "type": "start", "label": "بداية" },
-              { "type": "input", "label": "اقرأ mark" },
-              { "type": "decision", "label": "mark >= 60" },
-              { "type": "output", "label": "اطبع passed" },
-              { "type": "output", "label": "اطبع failed" },
-              { "type": "end", "label": "نهاية" }
-            ]
-          }
-        }
-      },
-      {
-        "id": "flowchart-5",
-        "number": 5,
         "body": "اكتب الخوارزمية البيانية اللازمة لحساب:\r\n\r\n```cpp\r\ny = x / (x - 3)\r\n```",
         "answer": {
           "verdict": "الحل",
@@ -688,8 +669,8 @@ const QUESTION_SECTIONS = [
         }
       },
       {
-        "id": "flowchart-6",
-        "number": 6,
+        "id": "flowchart-5",
+        "number": 5,
         "body": "اكتب الخوارزمية البيانية المناسبة لقراءة علامة طالب `mark` في مادة، وطباعة العبارة `passed` إذا كان ناجحًا، وطباعة العبارة `failed` إذا كان راسبًا.\r\nشرط النجاح هو الحصول على العلامة `60` أو أكثر.",
         "answer": {
           "verdict": "الحل",
@@ -707,8 +688,8 @@ const QUESTION_SECTIONS = [
         }
       },
       {
-        "id": "flowchart-7",
-        "number": 7,
+        "id": "flowchart-6",
+        "number": 6,
         "body": "اكتب الخوارزمية البيانية اللازمة لإدخال عدد صحيح `x` وطباعة العبارة `Positive` إذا كان هذا العدد موجبًا، والعبارة `Negative` إذا كان سالبًا.",
         "answer": {
           "verdict": "الحل",
@@ -726,8 +707,8 @@ const QUESTION_SECTIONS = [
         }
       },
       {
-        "id": "flowchart-8",
-        "number": 8,
+        "id": "flowchart-7",
+        "number": 7,
         "body": "اكتب الخوارزمية النصية والبيانية لحساب محيط ومساحة مربع طول ضلعه `x`.",
         "answer": {
           "verdict": "الحل",
@@ -753,8 +734,8 @@ const QUESTION_SECTIONS = [
         }
       },
       {
-        "id": "flowchart-9",
-        "number": 9,
+        "id": "flowchart-8",
+        "number": 8,
         "body": "اكتب الخوارزمية النصية والبيانية لإدخال `x` وإيجاد قيمة:\r\n\r\n```cpp\r\ny = x / (x - 7)\r\n```",
         "answer": {
           "verdict": "الحل",
