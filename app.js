@@ -12,7 +12,6 @@ const homeView = document.querySelector("#homeView");
 const sectionView = document.querySelector("#sectionView");
 const categoryList = document.querySelector("#categoryList");
 const questionList = document.querySelector("#questionList");
-const backButton = document.querySelector("#backButton");
 const homeButton = document.querySelector("#homeButton");
 const scrollTopButton = document.querySelector("#scrollTopButton");
 
@@ -111,7 +110,6 @@ function openSection(id, push = true) {
   document.querySelector("#headerSubtitle").textContent = section.title;
   renderQuestionList(section);
   showOnly(sectionView);
-  backButton.classList.remove("is-hidden");
   homeButton.classList.remove("is-hidden");
   if (push) history.pushState({}, "", `#${section.id}`);
   window.scrollTo({ top: 0 });
@@ -122,7 +120,6 @@ function showHome(push = true) {
   applyTheme(null);
   renderCategories();
   showOnly(homeView);
-  backButton.classList.add("is-hidden");
   homeButton.classList.add("is-hidden");
   document.querySelector("#headerSubtitle").textContent = "اختر قسمًا للبدء";
   if (push) history.pushState({}, "", location.pathname);
@@ -139,7 +136,6 @@ categoryList.addEventListener("click", (event) => {
   const button = event.target.closest("[data-section]");
   if (button) openSection(button.dataset.section);
 });
-backButton.addEventListener("click", () => history.back());
 homeButton.addEventListener("click", () => showHome());
 scrollTopButton.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 window.addEventListener("scroll", () => scrollTopButton.classList.toggle("is-hidden", window.scrollY < 500));
