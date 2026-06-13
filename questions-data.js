@@ -498,15 +498,6 @@ const QUESTION_SECTIONS = [
       {
         "id": "debug-code-7",
         "number": 7,
-        "body": "صحح الأخطاء الموجودة في البرنامج التالي، والذي يقوم بحساب مجموع الأعداد الزوجية الموجودة في المجال من `0` إلى `30`.\r\n\r\n```cpp\r\n#include <iostream.h>\r\n\r\nmain()\r\n{\r\n    char sum = 0;\r\n\r\n    for (i = 1; i <= 15; i--)\r\n    {\r\n        if (i / 2 = 0)\r\n            sum = sum + 1;\r\n    }\r\n\r\n    cin << \"sum is : \" << i;\r\n\r\n    return 0;\r\n}\r\n```",
-        "answer": {
-          "verdict": "التصحيح",
-          "correction": "الخطأ 1: `char sum = 0;` ← الصحيح: `int sum = 0;`\n\nالخطأ 2: يجب أن تبدأ الحلقة من `0` وتنتهي عند `30` مع `i++`.\n\nالخطأ 3: `if (i / 2 = 0)` ← الصحيح: `if (i % 2 == 0)`.\n\nالخطأ 4: `sum = sum + 1;` ← الصحيح: `sum = sum + i;`\n\nالخطأ 5: `cin << \"sum is : \" << i;` ← الصحيح: `cout << \"sum is : \" << sum;`.\n\nالبرنامج المصحح:\n\n```cpp\n#include <iostream.h>\n\nmain()\n{\n    [[fix]]int[[/fix]] sum = 0;\n\n    for ([[fix]]int[[/fix]] i = [[fix]]0[[/fix]]; i <= [[fix]]30[[/fix]]; i[[fix]]++[[/fix]])\n    {\n        if (i [[fix]]%[[/fix]] 2 [[fix]]==[[/fix]] 0)\n            sum = sum + [[fix]]i[[/fix]];\n    }\n\n    [[fix]]cout[[/fix]] << \"sum is : \" << [[fix]]sum[[/fix]];\n\n    return 0;\n}\n```"
-        }
-      },
-      {
-        "id": "debug-code-8",
-        "number": 8,
         "body": "صحح الأخطاء الموجودة في البرنامج التالي، والذي يقوم بحساب المتوسط الحسابي للأعداد الموجودة في المجال من `1` إلى `10`.\r\n\r\n```cpp\r\n#include <iostream.h>\r\n\r\nmain()\r\n{\r\n    int sum = 1;\r\n\r\n    for (int i = 1; i <= 10; i--)\r\n    {\r\n        sum = sum + 1;\r\n    }\r\n\r\n    cout << \"avg = \" << i;\r\n\r\n    return 0;\r\n}\r\n```",
         "answer": {
           "verdict": "التصحيح",
@@ -514,8 +505,8 @@ const QUESTION_SECTIONS = [
         }
       },
       {
-        "id": "debug-code-9",
-        "number": 9,
+        "id": "debug-code-8",
+        "number": 8,
         "body": "صحح الأخطاء الموجودة في البرنامج التالي، والذي يقوم بقراءة نصف قطر دائرة، ثم يطبع قيمة قطرها ومحيطها ومساحتها.\r\n\r\n```cpp\r\n#include <iostream.h>\r\n\r\nmain()\r\n{\r\n    bool r;\r\n\r\n    float p = 3.14;\r\n\r\n    cin >> r\r\n\r\n    cin << r * 2 << \"\\n\";\r\n\r\n    cout << 2 * p * R << \"\\n\";\r\n\r\n    cout << p * r * r << \"\\n\";\r\n\r\n    return 0;\r\n}\r\n```",
         "answer": {
           "verdict": "التصحيح",
