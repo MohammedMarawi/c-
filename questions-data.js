@@ -507,15 +507,6 @@ const QUESTION_SECTIONS = [
       {
         "id": "debug-code-8",
         "number": 8,
-        "body": "صحح الأخطاء الموجودة في البرنامج التالي، والذي يقوم بحساب المتوسط الحسابي للأعداد الموجودة في المجال من `1` إلى `10`.\r\n\r\n```cpp\r\n#include <iostream.h>\r\n\r\nmain()\r\n{\r\n    int sum = 1;\r\n\r\n    for (int i = 1; i <= 10; i--)\r\n    {\r\n        sum = sum + 1;\r\n    }\r\n\r\n    cout << \"avg = \" << i;\r\n\r\n    return 0;\r\n}\r\n```",
-        "answer": {
-          "verdict": "التصحيح",
-          "correction": "الخطأ 1: `int sum = 1;` ← الصحيح: `int sum = 0;` مع التصريح عن `avg`.\n\nالخطأ 2: `i--` ← الصحيح: `i++`.\n\nالخطأ 3: `sum = sum + 1;` ← الصحيح: `sum = sum + i;`\n\nالخطأ 4: ينقص حساب المتوسط: `avg = sum / 10.0;`.\n\nالخطأ 5: طباعة `i` ← الصحيح طباعة `avg`.\n\nالبرنامج المصحح:\n\n```cpp\n#include <iostream.h>\n\nmain()\n{\n    int sum = [[fix]]0[[/fix]];\n    [[fix]]float avg;[[/fix]]\n\n    for (int i = 1; i <= 10; i[[fix]]++[[/fix]])\n    {\n        sum = sum + [[fix]]i[[/fix]];\n    }\n\n    [[fix]]avg = sum / 10.0;[[/fix]]\n\n    cout << \"avg = \" << [[fix]]avg[[/fix]];\n\n    return 0;\n}\n```"
-        }
-      },
-      {
-        "id": "debug-code-9",
-        "number": 9,
         "body": "صحح الأخطاء الموجودة في البرنامج التالي، والذي يقوم بقراءة نصف قطر دائرة، ثم يطبع قيمة قطرها ومحيطها ومساحتها.\r\n\r\n```cpp\r\n#include <iostream.h>\r\n\r\nmain()\r\n{\r\n    bool r;\r\n\r\n    float p = 3.14;\r\n\r\n    cin >> r\r\n\r\n    cin << r * 2 << \"\\n\";\r\n\r\n    cout << 2 * p * R << \"\\n\";\r\n\r\n    cout << p * r * r << \"\\n\";\r\n\r\n    return 0;\r\n}\r\n```",
         "answer": {
           "verdict": "التصحيح",
