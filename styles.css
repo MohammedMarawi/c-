@@ -7,6 +7,7 @@
   --text: #f4f7fb;
   --muted: #9ca7b8;
   --accent: #36d399;
+  --accent-rgb: 54, 211, 153;
   --accent-soft: rgba(54, 211, 153, .12);
   --code: #080a0f;
   --danger: #ff8e8e;
@@ -25,6 +26,11 @@ body {
   font-family: Tahoma, Arial, sans-serif;
   line-height: 1.75;
   letter-spacing: 0;
+  transition: background-color .25s ease;
+}
+
+body.inside-section {
+  background: linear-gradient(180deg, rgba(var(--accent-rgb), .08) 0, var(--bg) 230px);
 }
 
 button, input { font: inherit; }
@@ -93,7 +99,7 @@ button { color: inherit; }
   cursor: pointer;
 }
 
-.icon-button svg, .scroll-top svg, .search svg {
+.icon-button svg, .scroll-top svg {
   width: 20px;
   fill: none;
   stroke: currentColor;
@@ -127,39 +133,6 @@ h1 {
   margin: 7px 0 0;
   color: var(--muted);
   font-size: 13px;
-}
-
-.overall-progress {
-  margin-top: 22px;
-  padding-top: 18px;
-  border-top: 1px solid var(--line);
-}
-
-.overall-progress > div:first-child {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 9px;
-  color: var(--muted);
-  font-size: 12px;
-}
-
-.overall-progress strong { color: var(--text); }
-
-.progress-track {
-  height: 5px;
-  overflow: hidden;
-  border-radius: 5px;
-  background: var(--line);
-}
-
-.progress-track span {
-  display: block;
-  width: 0;
-  height: 100%;
-  border-radius: inherit;
-  background: var(--accent);
-  transition: width .25s ease;
 }
 
 .category-list {
@@ -218,6 +191,14 @@ h1 {
   cursor: pointer;
 }
 
+.category-card .category-number {
+  background: rgba(var(--card-rgb), .13);
+  color: var(--card-accent);
+}
+
+.category-card:active,
+.question-link:active { transform: scale(.99); }
+
 .category-card:active { transform: scale(.99); }
 
 .category-number {
@@ -237,43 +218,13 @@ h1 {
 .category-arrow { color: var(--muted); font-size: 20px; text-align: left; }
 
 .section-tools {
-  position: sticky;
-  z-index: 5;
-  top: 68px;
   margin: 0 -14px;
-  padding: 20px 14px 12px;
+  padding: 24px 14px 16px;
   border-bottom: 1px solid var(--line);
-  background: rgba(9, 11, 16, .96);
-  backdrop-filter: blur(18px);
+  background: rgba(var(--accent-rgb), .06);
 }
 
 .section-heading h1 { font-size: 20px; }
-
-.search {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  height: 44px;
-  margin-top: 14px;
-  padding: 0 12px;
-  border: 1px solid var(--line);
-  border-radius: 7px;
-  background: var(--surface);
-  color: var(--muted);
-}
-
-.search svg { flex: 0 0 18px; width: 18px; }
-
-.search input {
-  width: 100%;
-  border: 0;
-  outline: 0;
-  background: transparent;
-  color: var(--text);
-  font-size: 13px;
-}
-
-.search input::placeholder { color: #737e8f; }
 
 .question-list {
   display: grid;
@@ -281,21 +232,45 @@ h1 {
   padding-top: 16px;
 }
 
-.question-card {
-  overflow: hidden;
+.question-link {
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr) 24px;
+  align-items: center;
+  gap: 11px;
+  width: 100%;
+  min-height: 88px;
+  padding: 12px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--surface);
+  color: var(--text);
+  text-align: right;
+  cursor: pointer;
 }
 
-.question-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 64px;
-  padding: 10px 11px;
-  border-bottom: 1px solid var(--line);
-  background: var(--surface-2);
+.question-link:hover { border-color: rgba(var(--accent-rgb), .42); }
+
+.question-preview {
+  min-width: 0;
+}
+
+.question-preview strong,
+.question-preview small { display: block; }
+.question-preview strong { margin-bottom: 3px; font-size: 13px; }
+.question-preview small {
+  display: -webkit-box;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.7;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.question-arrow {
+  color: var(--accent);
+  font-size: 22px;
+  text-align: left;
 }
 
 .question-index {
@@ -310,38 +285,64 @@ h1 {
   font-weight: 800;
 }
 
-.complete-button {
-  position: relative;
-  width: 38px;
-  height: 38px;
-  padding: 0;
-  border: 1px solid var(--line);
-  border-radius: 7px;
-  background: transparent;
-  cursor: pointer;
+.detail-heading {
+  margin: 0 -14px;
+  padding: 28px 14px 22px;
+  border-bottom: 1px solid rgba(var(--accent-rgb), .3);
+  background: rgba(var(--accent-rgb), .1);
 }
 
-.complete-button::before {
-  position: absolute;
-  top: 10px;
-  right: 9px;
-  width: 16px;
-  height: 9px;
-  border-bottom: 2px solid var(--muted);
-  border-left: 2px solid var(--muted);
-  content: "";
-  transform: rotate(-45deg);
+.detail-heading h1 { font-size: 24px; }
+.detail-heading > p:last-child {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 12px;
 }
 
-.question-card.is-complete { border-color: rgba(54, 211, 153, .38); }
-.question-card.is-complete .complete-button { border-color: var(--accent); background: var(--accent); }
-.question-card.is-complete .complete-button::before { border-color: #052b1e; }
+.question-detail {
+  margin-top: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(var(--accent-rgb), .35);
+  border-radius: 8px;
+  background: var(--surface);
+}
 
 .question-body {
   padding: 16px 14px 18px;
   overflow-wrap: anywhere;
   font-size: 14px;
 }
+
+.question-detail .question-body {
+  min-height: 220px;
+  padding: 22px 16px 26px;
+  font-size: 15px;
+}
+
+.question-navigation {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.question-navigation button {
+  min-width: 0;
+  min-height: 62px;
+  padding: 9px 12px;
+  border: 1px solid rgba(var(--accent-rgb), .32);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  text-align: right;
+}
+
+.question-navigation span,
+.question-navigation strong { display: block; }
+.question-navigation span { color: var(--muted); font-size: 10px; }
+.question-navigation strong { margin-top: 2px; color: var(--accent); font-size: 12px; }
+.question-navigation button:disabled { opacity: .35; cursor: default; }
 
 .question-body p { margin: 0 0 12px; }
 .question-body p:last-child { margin-bottom: 0; }
@@ -415,12 +416,6 @@ pre {
   text-align: left;
 }
 
-.empty-state {
-  margin: 36px 0;
-  color: var(--muted);
-  text-align: center;
-}
-
 .scroll-top {
   position: fixed;
   z-index: 12;
@@ -437,5 +432,5 @@ pre {
 @media (min-width: 640px) {
   .category-list { grid-template-columns: 1fr 1fr; }
   main { padding-inline: 20px; }
-  .section-tools { margin-inline: -20px; padding-inline: 20px; }
+  .section-tools, .detail-heading { margin-inline: -20px; padding-inline: 20px; }
 }

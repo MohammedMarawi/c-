@@ -29,14 +29,7 @@
       <div class="intro">
         <p class="eyebrow">بنك أسئلة C++</p>
         <h1>اختر نوع الأسئلة</h1>
-        <p>ستة أقسام مرتبة للمراجعة على الهاتف، مع حفظ تقدمك تلقائيًا.</p>
-        <div class="overall-progress">
-          <div>
-            <span>التقدم الكلي</span>
-            <strong id="overallProgressText">0 من 106</strong>
-          </div>
-          <div class="progress-track"><span id="overallProgressBar"></span></div>
-        </div>
+        <p>ستة أقسام مرتبة للمراجعة على الهاتف.</p>
       </div>
       <nav id="categoryList" class="category-list" aria-label="أقسام الأسئلة"></nav>
       <footer class="site-credit">
@@ -55,13 +48,29 @@
           <h1 id="sectionTitle"></h1>
           <p id="sectionMeta"></p>
         </div>
-        <label class="search">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
-          <input id="searchInput" type="search" placeholder="ابحث داخل هذا القسم" autocomplete="off">
-        </label>
       </div>
       <div id="questionList" class="question-list"></div>
-      <p id="emptyState" class="empty-state is-hidden">لا توجد أسئلة مطابقة لبحثك.</p>
+    </section>
+
+    <section id="questionView" class="view is-hidden">
+      <div class="detail-heading">
+        <p class="eyebrow" id="detailKicker"></p>
+        <h1 id="detailTitle"></h1>
+        <p id="detailMeta"></p>
+      </div>
+      <article class="question-detail">
+        <div id="detailBody" class="question-body"></div>
+      </article>
+      <nav class="question-navigation" aria-label="التنقل بين الأسئلة">
+        <button id="previousQuestion" type="button">
+          <span>السابق</span>
+          <strong id="previousLabel"></strong>
+        </button>
+        <button id="nextQuestion" type="button">
+          <span>التالي</span>
+          <strong id="nextLabel"></strong>
+        </button>
+      </nav>
     </section>
   </main>
 
