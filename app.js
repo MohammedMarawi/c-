@@ -124,9 +124,23 @@ function renderMarkdown(markdown) {
   return html.join("");
 }
 
+function flowchartLabel(label, x, y, width, height) {
+  const mixedLabel = label.match(/^([\u0600-\u06ff\s]+?)\s+(.+)$/);
+  let content;
+
+  if (mixedLabel && /[A-Za-z0-9()[\]/*+\-=<>!,.]/.test(mixedLabel[2])) {
+    content = `<span>${escapeHtml(mixedLabel[1].trim())}</span><bdi dir="ltr">${escapeHtml(mixedLabel[2].trim())}</bdi>`;
+  } else if (!/[\u0600-\u06ff]/.test(label)) {
+    content = `<bdi dir="ltr">${escapeHtml(label)}</bdi>`;
+  } else {
+    content = escapeHtml(label);
+  }
+
+  return `<foreignObject x="${x - width / 2}" y="${y - height / 2}" width="${width}" height="${height}"><div xmlns="http://www.w3.org/1999/xhtml" class="flowchart-label">${content}</div></foreignObject>`;
+}
+
 function flowchartShape(node, x, y, width = 150, height = 48) {
-  const label = escapeHtml(node.label);
-  const text = `<text x="${x}" y="${y + 5}" class="flowchart-text">${label}</text>`;
+  const text = flowchartLabel(node.label, x, y, width, height);
 
   if (node.type === "start" || node.type === "end") {
     return `<ellipse cx="${x}" cy="${y}" rx="${width / 2}" ry="${height / 2}" class="flowchart-shape"/>${text}`;

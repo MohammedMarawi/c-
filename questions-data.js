@@ -641,7 +641,7 @@ const QUESTION_SECTIONS = [
               { "type": "start", "label": "بداية" },
               { "type": "input", "label": "اقرأ y" },
               { "type": "decision", "label": "y != 7" },
-              { "type": "output", "label": "اطبع 1 / (y - 7)" },
+              { "type": "output", "label": "اطبع 1/(y-7)" },
               { "type": "output", "label": "لا يمكن الحساب" },
               { "type": "end", "label": "نهاية" }
             ]
