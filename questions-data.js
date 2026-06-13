@@ -498,15 +498,6 @@ const QUESTION_SECTIONS = [
       {
         "id": "debug-code-7",
         "number": 7,
-        "body": "صحح الأخطاء الموجودة في البرنامج التالي، والذي يقوم بحساب مجموع الأعداد الزوجية ضمن المجال من `1` إلى `30`.\r\n\r\n```cpp\r\n#include <math.h>\r\n\r\nmain()\r\n{\r\n    int sum = 1;\r\n\r\n    for (int i = 1; i <= 10; i++)\r\n    {\r\n        if (i / 2 == 0)\r\n            sum = sum + 1;\r\n    }\r\n\r\n    cout << \"sum is :\" << i;\r\n\r\n    return 0;\r\n}\r\n```",
-        "answer": {
-          "verdict": "التصحيح",
-          "correction": "الخطأ 1: `#include <math.h>` ← البرنامج يحتاج مكتبة الإدخال والإخراج: `#include <iostream>`.\n\nالخطأ 2: `int sum = 1;` ← الصحيح: `int sum = 0;`\n\nالخطأ 3: `i <= 10` ← الصحيح للمجال المطلوب: `i <= 30`.\n\nالخطأ 4: `if (i / 2 == 0)` ← الصحيح: `if (i % 2 == 0)`.\n\nالخطأ 5: `sum = sum + 1;` ← الصحيح: `sum = sum + i;`\n\nالخطأ 6: طباعة `i` ← الصحيح طباعة `sum`.\n\nالبرنامج المصحح:\n\n```cpp\n#include <[[fix]]iostream.h[[/fix]]>\n\nmain()\n{\n    int sum = [[fix]]0[[/fix]];\n\n    for (int i = 1; i <= [[fix]]30[[/fix]]; i++)\n    {\n        if (i [[fix]]%[[/fix]] 2 == 0)\n            sum = sum + [[fix]]i[[/fix]];\n    }\n\n    cout << \"sum is : \" << [[fix]]sum[[/fix]];\n\n    return 0;\n}\n```"
-        }
-      },
-      {
-        "id": "debug-code-8",
-        "number": 8,
         "body": "صحح الأخطاء الموجودة في البرنامج التالي، والذي يقوم بحساب مجموع الأعداد الزوجية الموجودة في المجال من `0` إلى `30`.\r\n\r\n```cpp\r\n#include <iostream.h>\r\n\r\nmain()\r\n{\r\n    char sum = 0;\r\n\r\n    for (i = 1; i <= 15; i--)\r\n    {\r\n        if (i / 2 = 0)\r\n            sum = sum + 1;\r\n    }\r\n\r\n    cin << \"sum is : \" << i;\r\n\r\n    return 0;\r\n}\r\n```",
         "answer": {
           "verdict": "التصحيح",
@@ -514,8 +505,8 @@ const QUESTION_SECTIONS = [
         }
       },
       {
-        "id": "debug-code-9",
-        "number": 9,
+        "id": "debug-code-8",
+        "number": 8,
         "body": "صحح الأخطاء الموجودة في البرنامج التالي، والذي يقوم بحساب المتوسط الحسابي للأعداد الموجودة في المجال من `1` إلى `10`.\r\n\r\n```cpp\r\n#include <iostream.h>\r\n\r\nmain()\r\n{\r\n    int sum = 1;\r\n\r\n    for (int i = 1; i <= 10; i--)\r\n    {\r\n        sum = sum + 1;\r\n    }\r\n\r\n    cout << \"avg = \" << i;\r\n\r\n    return 0;\r\n}\r\n```",
         "answer": {
           "verdict": "التصحيح",
@@ -523,8 +514,8 @@ const QUESTION_SECTIONS = [
         }
       },
       {
-        "id": "debug-code-10",
-        "number": 10,
+        "id": "debug-code-9",
+        "number": 9,
         "body": "صحح الأخطاء الموجودة في البرنامج التالي، والذي يقوم بقراءة نصف قطر دائرة، ثم يطبع قيمة قطرها ومحيطها ومساحتها.\r\n\r\n```cpp\r\n#include <iostream.h>\r\n\r\nmain()\r\n{\r\n    bool r;\r\n\r\n    float p = 3.14;\r\n\r\n    cin >> r\r\n\r\n    cin << r * 2 << \"\\n\";\r\n\r\n    cout << 2 * p * R << \"\\n\";\r\n\r\n    cout << p * r * r << \"\\n\";\r\n\r\n    return 0;\r\n}\r\n```",
         "answer": {
           "verdict": "التصحيح",
