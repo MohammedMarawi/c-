@@ -506,42 +506,74 @@ const QUESTION_SECTIONS = [
       {
         "id": "write-program-1",
         "number": 1,
-        "body": "اكتب برنامجًا يأخذ كدخل علامات طالب في 3 مواد، ثم يطبع على الشاشة مجموع العلامات والمعدل، أي المتوسط الحسابي."
+        "body": "اكتب برنامجًا يأخذ كدخل علامات طالب في 3 مواد، ثم يطبع على الشاشة مجموع العلامات والمعدل، أي المتوسط الحسابي.",
+        "answer": {
+          "verdict": "الحل",
+          "correction": "```cpp\n#include <iostream>\nusing namespace std;\n\nint main()\n{\n    double mark1, mark2, mark3;\n    cin >> mark1 >> mark2 >> mark3;\n\n    double sum = mark1 + mark2 + mark3;\n    double average = sum / 3;\n\n    cout << \"Sum = \" << sum << endl;\n    cout << \"Average = \" << average << endl;\n\n    return 0;\n}\n```"
+        }
       },
       {
         "id": "write-program-2",
         "number": 2,
-        "body": "اكتب برنامجًا يطلب من المستخدم إدخال علامات طالب في 5 مواد، ثم يقوم بحساب معدل هذا الطالب، فإذا كان المعدل أعلى من 70 يطبع على الشاشة العبارة `Very Good`، وإلا يطبع العبارة `Accepted`."
+        "body": "اكتب برنامجًا يطلب من المستخدم إدخال علامات طالب في 5 مواد، ثم يقوم بحساب معدل هذا الطالب، فإذا كان المعدل أعلى من 70 يطبع على الشاشة العبارة `Very Good`، وإلا يطبع العبارة `Accepted`.",
+        "answer": {
+          "verdict": "الحل",
+          "correction": "```cpp\n#include <iostream>\nusing namespace std;\n\nint main()\n{\n    double mark, sum = 0;\n\n    for (int i = 0; i < 5; i++)\n    {\n        cin >> mark;\n        sum += mark;\n    }\n\n    double average = sum / 5;\n\n    if (average > 70)\n        cout << \"Very Good\";\n    else\n        cout << \"Accepted\";\n\n    return 0;\n}\n```"
+        }
       },
       {
         "id": "write-program-3",
         "number": 3,
-        "body": "اكتب برنامجًا باستخدام تعليمة `if` يسمح للمستخدم بإدخال علاماته في ستة مقررات، ثم يقوم بحساب المعدل، فإذا كان المعدل أعلى من `80` يطبع على الشاشة العبارة `Good Level`، وإذا كان أصغر يطبع على الشاشة العبارة `You should work hard`."
+        "body": "اكتب برنامجًا باستخدام تعليمة `if` يسمح للمستخدم بإدخال علاماته في ستة مقررات، ثم يقوم بحساب المعدل، فإذا كان المعدل أعلى من `80` يطبع على الشاشة العبارة `Good Level`، وإذا كان أصغر يطبع على الشاشة العبارة `You should work hard`.",
+        "answer": {
+          "verdict": "الحل",
+          "correction": "```cpp\n#include <iostream>\nusing namespace std;\n\nint main()\n{\n    double mark, sum = 0;\n\n    for (int i = 0; i < 6; i++)\n    {\n        cin >> mark;\n        sum += mark;\n    }\n\n    double average = sum / 6;\n\n    if (average > 80)\n        cout << \"Good Level\";\n    else\n        cout << \"You should work hard\";\n\n    return 0;\n}\n```"
+        }
       },
       {
         "id": "write-program-4",
         "number": 4,
-        "body": "اكتب برنامجًا يطلب من المستخدم إدخال أسعار `3` مواد غذائية، ثم يطبع على الشاشة مجموع أسعار هذه المواد والمتوسط الحسابي لهذه الأسعار."
+        "body": "اكتب برنامجًا يطلب من المستخدم إدخال أسعار `3` مواد غذائية، ثم يطبع على الشاشة مجموع أسعار هذه المواد والمتوسط الحسابي لهذه الأسعار.",
+        "answer": {
+          "verdict": "الحل",
+          "correction": "```cpp\n#include <iostream>\nusing namespace std;\n\nint main()\n{\n    double price1, price2, price3;\n    cin >> price1 >> price2 >> price3;\n\n    double sum = price1 + price2 + price3;\n    double average = sum / 3;\n\n    cout << \"Sum = \" << sum << endl;\n    cout << \"Average = \" << average << endl;\n\n    return 0;\n}\n```"
+        }
       },
       {
         "id": "write-program-5",
         "number": 5,
-        "body": "اكتب برنامجًا يطلب من المستخدم إدخال `10` أعداد صحيحة، ثم يقوم بحساب ناتج جمع هذه الأعداد، فإذا كان الناتج أكبر تمامًا من `200` يطبع العبارة `Between 100 and 200`، وإذا كان يساوي `500` يطبع العبارة `Equal 500`، وإذا كان غير ذلك يطبع العبارة `Try again`."
+        "body": "اكتب برنامجًا يطلب من المستخدم إدخال `10` أعداد صحيحة، ثم يقوم بحساب ناتج جمع هذه الأعداد، فإذا كان الناتج أكبر تمامًا من `200` يطبع العبارة `Between 100 and 200`، وإذا كان يساوي `500` يطبع العبارة `Equal 500`، وإذا كان غير ذلك يطبع العبارة `Try again`.",
+        "answer": {
+          "verdict": "الحل",
+          "correction": "```cpp\n#include <iostream>\nusing namespace std;\n\nint main()\n{\n    int number, sum = 0;\n\n    for (int i = 0; i < 10; i++)\n    {\n        cin >> number;\n        sum += number;\n    }\n\n    if (sum == 500)\n        cout << \"Equal 500\";\n    else if (sum > 200)\n        cout << \"Between 100 and 200\";\n    else\n        cout << \"Try again\";\n\n    return 0;\n}\n```"
+        }
       },
       {
         "id": "write-program-6",
         "number": 6,
-        "body": "اكتب برنامجًا لإدخال عددين صحيحين وحساب ناتج ضربهما، فإذا كان ناتج الضرب عددًا زوجيًا تتم طباعة العبارة `even value` على الشاشة، وإلا تتم طباعة العبارة `odd value` على الشاشة."
+        "body": "اكتب برنامجًا لإدخال عددين صحيحين وحساب ناتج ضربهما، فإذا كان ناتج الضرب عددًا زوجيًا تتم طباعة العبارة `even value` على الشاشة، وإلا تتم طباعة العبارة `odd value` على الشاشة.",
+        "answer": {
+          "verdict": "الحل",
+          "correction": "```cpp\n#include <iostream>\nusing namespace std;\n\nint main()\n{\n    int x, y;\n    cin >> x >> y;\n\n    int product = x * y;\n\n    if (product % 2 == 0)\n        cout << \"even value\";\n    else\n        cout << \"odd value\";\n\n    return 0;\n}\n```"
+        }
       },
       {
         "id": "write-program-7",
         "number": 7,
-        "body": "اكتب برنامجًا يطلب من المستخدم إدخال أسعار `5` مواد غذائية، ثم يقوم بحساب مجموع ومتوسط أسعار هذه المواد."
+        "body": "اكتب برنامجًا يطلب من المستخدم إدخال أسعار `5` مواد غذائية، ثم يقوم بحساب مجموع ومتوسط أسعار هذه المواد.",
+        "answer": {
+          "verdict": "الحل",
+          "correction": "```cpp\n#include <iostream>\nusing namespace std;\n\nint main()\n{\n    double price, sum = 0;\n\n    for (int i = 0; i < 5; i++)\n    {\n        cin >> price;\n        sum += price;\n    }\n\n    double average = sum / 5;\n\n    cout << \"Sum = \" << sum << endl;\n    cout << \"Average = \" << average << endl;\n\n    return 0;\n}\n```"
+        }
       },
       {
         "id": "write-program-8",
         "number": 8,
-        "body": "اكتب برنامجًا يطلب من المستخدم إدخال `10` أعداد صحيحة، ثم يقوم بحساب ناتج جمع هذه الأعداد، فإذا كان الناتج أكبر من `100` وأصغر تمامًا من `200` يطبع العبارة `Between 100 and 200`، وإذا كان يساوي `500` يطبع العبارة `Equal 500`، وإذا كان غير ذلك يطبع العبارة `Try again`."
+        "body": "اكتب برنامجًا يطلب من المستخدم إدخال `10` أعداد صحيحة، ثم يقوم بحساب ناتج جمع هذه الأعداد، فإذا كان الناتج أكبر من `100` وأصغر تمامًا من `200` يطبع العبارة `Between 100 and 200`، وإذا كان يساوي `500` يطبع العبارة `Equal 500`، وإذا كان غير ذلك يطبع العبارة `Try again`.",
+        "answer": {
+          "verdict": "الحل",
+          "correction": "```cpp\n#include <iostream>\nusing namespace std;\n\nint main()\n{\n    int number, sum = 0;\n\n    for (int i = 0; i < 10; i++)\n    {\n        cin >> number;\n        sum += number;\n    }\n\n    if (sum == 500)\n        cout << \"Equal 500\";\n    else if (sum > 100 && sum < 200)\n        cout << \"Between 100 and 200\";\n    else\n        cout << \"Try again\";\n\n    return 0;\n}\n```"
+        }
       }
     ]
   },
