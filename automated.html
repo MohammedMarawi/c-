@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ar">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#090b10">
+  <title>اختبار مؤتمت شامل</title>
+  <link rel="stylesheet" href="automated.css">
+</head>
+<body>
+  <header class="exam-topbar">
+    <a class="home-link" href="index.html" aria-label="العودة إلى بنك الأسئلة">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg>
+    </a>
+    <div class="brand">
+      <span class="brand-mark">C++</span>
+      <div>
+        <strong>اختبار مؤتمت شامل</strong>
+        <span>كل الأقسام بصيغة اختيار من متعدد</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>تدريب امتحاني مؤتمت</h1>
+      <p>كل سؤال له أربع إجابات. اختر إجابتك وسيظهر التصحيح فورًا.</p>
+      <div class="score-panel" aria-live="polite">
+        <span><strong id="answeredCount">0</strong> محلول</span>
+        <span><strong id="correctCount">0</strong> صحيح</span>
+        <span><strong id="scorePercent">0%</strong> النتيجة</span>
+      </div>
+    </section>
+
+    <nav id="sectionTabs" class="section-tabs" aria-label="أقسام الاختبار"></nav>
+    <section id="examList" class="exam-list"></section>
+  </main>
+
+  <script src="questions-data.js"></script>
+  <script src="automated.js"></script>
+</body>
+</html>
